@@ -20,22 +20,29 @@ import Foundation
 
 public typealias NotificationHandler = (notification: NSNotification) -> ()
 
-public class NotificationListener {
+public class NotificationListener: NSObject {
     
     public let name: String
     private let handler: NotificationHandler
     
-    public init (name: String, handler: NotificationHandler, object: AnyObject?) {
+    public init (name: String, object: AnyObject?, handler: NotificationHandler) {
         self.name = name
         self.handler = handler
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveNotification:", name: name, object: object)
+        
+        super.init()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didReceiveNotification:"), name: name, object: object)
     }
     
     public convenience init(name: String, handler: NotificationHandler) {
-        self.init(name: name, handler: handler, object: nil)
+        self.init(name: name, object: nil, handler: handler)
     }
     
-    private func didReceiveNotification(notification: NSNotification) {
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    internal func didReceiveNotification(notification: NSNotification) {
         self.handler(notification: notification)
     }
 }
