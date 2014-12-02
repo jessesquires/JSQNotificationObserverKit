@@ -1,4 +1,3 @@
-JSQNotificationListener
-=======================
+# JSQNotificationListener
 
 SOLID notifications for iOS
