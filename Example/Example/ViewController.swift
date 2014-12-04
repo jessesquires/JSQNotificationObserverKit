@@ -3,10 +3,6 @@
 //  http://www.jessesquires.com
 //
 //
-//  Documentation
-//  http://cocoadocs.org/docsets/JSQNotificationListenerKit
-//
-//
 //  GitHub
 //  https://github.com/jessesquires/JSQNotificationListenerKit
 //
