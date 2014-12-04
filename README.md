@@ -11,13 +11,47 @@ Additionally, it's common practice to have your view controllers handle notifica
 This project aims to provide better semantics regarding notifications and moves the responsibilty of handling notifications to a small, single-purpose object.
 
 **Before JSQNotificationListenerKit**
-```objective-c
-// code
+```swift
+class ViewController: UIViewController {
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleNotification", name: "CustomNotification", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "CustomNotification", object: nil)
+    }
+    
+    private func handleNotification:(notif: NSNotification) {
+        // handle notification
+    }
+}
 ```
 
 **After JSQNotificationListenerKit**
-```objective-c
-// code
+```swift
+class ViewController: UIViewController {
+    
+    var listener: NotificationListener? = nil
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        listener = NotificationListener(notificationName: "CustomNotification", handler: { (notification) -> Void in
+            // handle notification
+        })
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        listener = nil
+    }
+}
 ```
 
 ## Contribute
