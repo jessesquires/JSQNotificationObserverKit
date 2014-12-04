@@ -1,0 +1,8 @@
+language: objective-c
+
+before_install: 
+- brew update
+- if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
+
+script: 
+- xctool clean build test -project JSQNotificationListenerKit.xcodeproj -scheme JSQNotificationListenerKit -sdk iphonesimulator8.0 ONLY_ACTIVE_ARCH=NO
