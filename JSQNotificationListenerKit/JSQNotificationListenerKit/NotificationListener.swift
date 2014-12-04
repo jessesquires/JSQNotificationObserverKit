@@ -18,31 +18,36 @@
 
 import Foundation
 
-public typealias NotificationHandler = (notification: NSNotification) -> ()
+public typealias NotificationHandler = (notification: NSNotification!) -> Void
 
-public class NotificationListener: NSObject {
+public class NotificationListener {
     
     public let name: String
-    private let handler: NotificationHandler
+    private let proxy: NSObjectProtocol
     
-    public init (name: String, object: AnyObject?, handler: NotificationHandler) {
-        self.name = name
-        self.handler = handler
-        
-        super.init()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didReceiveNotification:"), name: name, object: object)
+    public init (notificationName: String, object: AnyObject?, queue: NSOperationQueue, handler: NotificationHandler) {
+        name = notificationName
+        proxy = NSNotificationCenter.defaultCenter().addObserverForName(name,
+                                                                        object: object,
+                                                                        queue: queue,
+                                                                        usingBlock: handler)
     }
     
-    public convenience init(name: String, handler: NotificationHandler) {
-        self.init(name: name, object: nil, handler: handler)
+    public convenience init(notificationName: String, object: AnyObject?, handler: NotificationHandler) {
+        self.init(notificationName: notificationName,
+                  object: object,
+                  queue: NSOperationQueue.mainQueue(),
+                  handler: handler)
+    }
+    
+    public convenience init(notificationName: String, handler: NotificationHandler) {
+        self.init(notificationName: notificationName,
+                  object: nil,
+                  queue: NSOperationQueue.mainQueue(),
+                  handler: handler)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    internal func didReceiveNotification(notification: NSNotification) {
-        self.handler(notification: notification)
+        NSNotificationCenter.defaultCenter().removeObserver(proxy)
     }
 }
