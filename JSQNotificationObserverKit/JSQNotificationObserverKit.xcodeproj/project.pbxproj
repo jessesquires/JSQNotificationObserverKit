@@ -7,100 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8861A6831A2D8AEB00845C43 /* NotificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861A6821A2D8AEB00845C43 /* NotificationListener.swift */; };
-		88F830171A2D88B0008596F4 /* JSQNotificationListenerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 88F830161A2D88B0008596F4 /* JSQNotificationListenerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88F8301D1A2D88B0008596F4 /* JSQNotificationListenerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F830111A2D88B0008596F4 /* JSQNotificationListenerKit.framework */; };
-		88F830241A2D88B0008596F4 /* JSQNotificationListenerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F830231A2D88B0008596F4 /* JSQNotificationListenerKitTests.swift */; };
+		887D75EA1ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		887D75F01ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; };
+		887D75F71ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */; };
+		887D76021ABFBE8200AAE6E7 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		88F8301E1A2D88B0008596F4 /* PBXContainerItemProxy */ = {
+		887D75F11ABFBD7A00AAE6E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 88F830081A2D88B0008596F4 /* Project object */;
+			containerPortal = 887D75DB1ABFBD7A00AAE6E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 88F830101A2D88B0008596F4;
-			remoteInfo = JSQNotificationListenerKit;
+			remoteGlobalIDString = 887D75E31ABFBD7A00AAE6E7;
+			remoteInfo = JSQNotificationObserverKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8861A6821A2D8AEB00845C43 /* NotificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationListener.swift; sourceTree = "<group>"; };
-		88F830111A2D88B0008596F4 /* JSQNotificationListenerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationListenerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88F830151A2D88B0008596F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88F830161A2D88B0008596F4 /* JSQNotificationListenerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSQNotificationListenerKit.h; sourceTree = "<group>"; };
-		88F8301C1A2D88B0008596F4 /* JSQNotificationListenerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSQNotificationListenerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88F830221A2D88B0008596F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88F830231A2D88B0008596F4 /* JSQNotificationListenerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQNotificationListenerKitTests.swift; sourceTree = "<group>"; };
+		887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationObserverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		887D75E81ABFBD7A00AAE6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSQNotificationObserverKit.h; sourceTree = "<group>"; };
+		887D75EF1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSQNotificationObserverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		887D75F51ABFBD7A00AAE6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQNotificationObserverKitTests.swift; sourceTree = "<group>"; };
+		887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		88F8300D1A2D88B0008596F4 /* Frameworks */ = {
+		887D75E01ABFBD7A00AAE6E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88F830191A2D88B0008596F4 /* Frameworks */ = {
+		887D75EC1ABFBD7A00AAE6E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F8301D1A2D88B0008596F4 /* JSQNotificationListenerKit.framework in Frameworks */,
+				887D75F01ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88F830071A2D88B0008596F4 = {
+		887D75DA1ABFBD7A00AAE6E7 = {
 			isa = PBXGroup;
 			children = (
-				88F830131A2D88B0008596F4 /* JSQNotificationListenerKit */,
-				88F830201A2D88B0008596F4 /* JSQNotificationListenerKitTests */,
-				88F830121A2D88B0008596F4 /* Products */,
+				887D75E61ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */,
+				887D75F31ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */,
+				887D75E51ABFBD7A00AAE6E7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		88F830121A2D88B0008596F4 /* Products */ = {
+		887D75E51ABFBD7A00AAE6E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88F830111A2D88B0008596F4 /* JSQNotificationListenerKit.framework */,
-				88F8301C1A2D88B0008596F4 /* JSQNotificationListenerKitTests.xctest */,
+				887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */,
+				887D75EF1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88F830131A2D88B0008596F4 /* JSQNotificationListenerKit */ = {
+		887D75E61ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */ = {
 			isa = PBXGroup;
 			children = (
-				8861A6821A2D8AEB00845C43 /* NotificationListener.swift */,
-				88F830161A2D88B0008596F4 /* JSQNotificationListenerKit.h */,
-				88F830141A2D88B0008596F4 /* Supporting Files */,
+				887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */,
+				887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */,
+				887D75E71ABFBD7A00AAE6E7 /* Supporting Files */,
 			);
-			path = JSQNotificationListenerKit;
+			path = JSQNotificationObserverKit;
 			sourceTree = "<group>";
 		};
-		88F830141A2D88B0008596F4 /* Supporting Files */ = {
+		887D75E71ABFBD7A00AAE6E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				88F830151A2D88B0008596F4 /* Info.plist */,
+				887D75E81ABFBD7A00AAE6E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		88F830201A2D88B0008596F4 /* JSQNotificationListenerKitTests */ = {
+		887D75F31ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				88F830231A2D88B0008596F4 /* JSQNotificationListenerKitTests.swift */,
-				88F830211A2D88B0008596F4 /* Supporting Files */,
+				887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */,
+				887D75F41ABFBD7A00AAE6E7 /* Supporting Files */,
 			);
-			path = JSQNotificationListenerKitTests;
+			path = JSQNotificationObserverKitTests;
 			sourceTree = "<group>";
 		};
-		88F830211A2D88B0008596F4 /* Supporting Files */ = {
+		887D75F41ABFBD7A00AAE6E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				88F830221A2D88B0008596F4 /* Info.plist */,
+				887D75F51ABFBD7A00AAE6E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,97 +108,97 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		88F8300E1A2D88B0008596F4 /* Headers */ = {
+		887D75E11ABFBD7A00AAE6E7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F830171A2D88B0008596F4 /* JSQNotificationListenerKit.h in Headers */,
+				887D75EA1ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		88F830101A2D88B0008596F4 /* JSQNotificationListenerKit */ = {
+		887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88F830271A2D88B0008596F4 /* Build configuration list for PBXNativeTarget "JSQNotificationListenerKit" */;
+			buildConfigurationList = 887D75FA1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKit" */;
 			buildPhases = (
-				88F8300C1A2D88B0008596F4 /* Sources */,
-				88F8300D1A2D88B0008596F4 /* Frameworks */,
-				88F8300E1A2D88B0008596F4 /* Headers */,
-				88F8300F1A2D88B0008596F4 /* Resources */,
+				887D75DF1ABFBD7A00AAE6E7 /* Sources */,
+				887D75E01ABFBD7A00AAE6E7 /* Frameworks */,
+				887D75E11ABFBD7A00AAE6E7 /* Headers */,
+				887D75E21ABFBD7A00AAE6E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = JSQNotificationListenerKit;
-			productName = JSQNotificationListenerKit;
-			productReference = 88F830111A2D88B0008596F4 /* JSQNotificationListenerKit.framework */;
+			name = JSQNotificationObserverKit;
+			productName = JSQNotificationObserverKit;
+			productReference = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		88F8301B1A2D88B0008596F4 /* JSQNotificationListenerKitTests */ = {
+		887D75EE1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88F8302A1A2D88B0008596F4 /* Build configuration list for PBXNativeTarget "JSQNotificationListenerKitTests" */;
+			buildConfigurationList = 887D75FD1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */;
 			buildPhases = (
-				88F830181A2D88B0008596F4 /* Sources */,
-				88F830191A2D88B0008596F4 /* Frameworks */,
-				88F8301A1A2D88B0008596F4 /* Resources */,
+				887D75EB1ABFBD7A00AAE6E7 /* Sources */,
+				887D75EC1ABFBD7A00AAE6E7 /* Frameworks */,
+				887D75ED1ABFBD7A00AAE6E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				88F8301F1A2D88B0008596F4 /* PBXTargetDependency */,
+				887D75F21ABFBD7A00AAE6E7 /* PBXTargetDependency */,
 			);
-			name = JSQNotificationListenerKitTests;
-			productName = JSQNotificationListenerKitTests;
-			productReference = 88F8301C1A2D88B0008596F4 /* JSQNotificationListenerKitTests.xctest */;
+			name = JSQNotificationObserverKitTests;
+			productName = JSQNotificationObserverKitTests;
+			productReference = 887D75EF1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		88F830081A2D88B0008596F4 /* Project object */ = {
+		887D75DB1ABFBD7A00AAE6E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Jesse Squires";
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Hexed Bits";
 				TargetAttributes = {
-					88F830101A2D88B0008596F4 = {
-						CreatedOnToolsVersion = 6.1;
+					887D75E31ABFBD7A00AAE6E7 = {
+						CreatedOnToolsVersion = 6.3;
 					};
-					88F8301B1A2D88B0008596F4 = {
-						CreatedOnToolsVersion = 6.1;
+					887D75EE1ABFBD7A00AAE6E7 = {
+						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
-			buildConfigurationList = 88F8300B1A2D88B0008596F4 /* Build configuration list for PBXProject "JSQNotificationListenerKit" */;
+			buildConfigurationList = 887D75DE1ABFBD7A00AAE6E7 /* Build configuration list for PBXProject "JSQNotificationObserverKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 88F830071A2D88B0008596F4;
-			productRefGroup = 88F830121A2D88B0008596F4 /* Products */;
+			mainGroup = 887D75DA1ABFBD7A00AAE6E7;
+			productRefGroup = 887D75E51ABFBD7A00AAE6E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88F830101A2D88B0008596F4 /* JSQNotificationListenerKit */,
-				88F8301B1A2D88B0008596F4 /* JSQNotificationListenerKitTests */,
+				887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */,
+				887D75EE1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		88F8300F1A2D88B0008596F4 /* Resources */ = {
+		887D75E21ABFBD7A00AAE6E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88F8301A1A2D88B0008596F4 /* Resources */ = {
+		887D75ED1ABFBD7A00AAE6E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,34 +208,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		88F8300C1A2D88B0008596F4 /* Sources */ = {
+		887D75DF1ABFBD7A00AAE6E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8861A6831A2D8AEB00845C43 /* NotificationListener.swift in Sources */,
+				887D76021ABFBE8200AAE6E7 /* NotificationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88F830181A2D88B0008596F4 /* Sources */ = {
+		887D75EB1ABFBD7A00AAE6E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F830241A2D88B0008596F4 /* JSQNotificationListenerKitTests.swift in Sources */,
+				887D75F71ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		88F8301F1A2D88B0008596F4 /* PBXTargetDependency */ = {
+		887D75F21ABFBD7A00AAE6E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 88F830101A2D88B0008596F4 /* JSQNotificationListenerKit */;
-			targetProxy = 88F8301E1A2D88B0008596F4 /* PBXContainerItemProxy */;
+			target = 887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */;
+			targetProxy = 887D75F11ABFBD7A00AAE6E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		88F830251A2D88B0008596F4 /* Debug */ = {
+		887D75F81ABFBD7A00AAE6E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,9 +255,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -270,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -281,7 +283,7 @@
 			};
 			name = Debug;
 		};
-		88F830261A2D88B0008596F4 /* Release */ = {
+		887D75F91ABFBD7A00AAE6E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -299,18 +301,20 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,7 +324,7 @@
 			};
 			name = Release;
 		};
-		88F830281A2D88B0008596F4 /* Debug */ = {
+		887D75FB1ABFBD7A00AAE6E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -328,7 +332,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = JSQNotificationListenerKit/Info.plist;
+				INFOPLIST_FILE = JSQNotificationObserverKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +341,7 @@
 			};
 			name = Debug;
 		};
-		88F830291A2D88B0008596F4 /* Release */ = {
+		887D75FC1ABFBD7A00AAE6E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -345,7 +349,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = JSQNotificationListenerKit/Info.plist;
+				INFOPLIST_FILE = JSQNotificationObserverKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +357,7 @@
 			};
 			name = Release;
 		};
-		88F8302B1A2D88B0008596F4 /* Debug */ = {
+		887D75FE1ABFBD7A00AAE6E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -364,20 +368,20 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = JSQNotificationListenerKitTests/Info.plist;
+				INFOPLIST_FILE = JSQNotificationObserverKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		88F8302C1A2D88B0008596F4 /* Release */ = {
+		887D75FF1ABFBD7A00AAE6E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = JSQNotificationListenerKitTests/Info.plist;
+				INFOPLIST_FILE = JSQNotificationObserverKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -386,34 +390,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88F8300B1A2D88B0008596F4 /* Build configuration list for PBXProject "JSQNotificationListenerKit" */ = {
+		887D75DE1ABFBD7A00AAE6E7 /* Build configuration list for PBXProject "JSQNotificationObserverKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88F830251A2D88B0008596F4 /* Debug */,
-				88F830261A2D88B0008596F4 /* Release */,
+				887D75F81ABFBD7A00AAE6E7 /* Debug */,
+				887D75F91ABFBD7A00AAE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88F830271A2D88B0008596F4 /* Build configuration list for PBXNativeTarget "JSQNotificationListenerKit" */ = {
+		887D75FA1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88F830281A2D88B0008596F4 /* Debug */,
-				88F830291A2D88B0008596F4 /* Release */,
+				887D75FB1ABFBD7A00AAE6E7 /* Debug */,
+				887D75FC1ABFBD7A00AAE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		88F8302A1A2D88B0008596F4 /* Build configuration list for PBXNativeTarget "JSQNotificationListenerKitTests" */ = {
+		887D75FD1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88F8302B1A2D88B0008596F4 /* Debug */,
-				88F8302C1A2D88B0008596F4 /* Release */,
+				887D75FE1ABFBD7A00AAE6E7 /* Debug */,
+				887D75FF1ABFBD7A00AAE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 88F830081A2D88B0008596F4 /* Project object */;
+	rootObject = 887D75DB1ABFBD7A00AAE6E7 /* Project object */;
 }

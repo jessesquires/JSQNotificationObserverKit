@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88F82FE11A2D86ED008596F4"
-               BuildableName = "Example.app"
-               BlueprintName = "Example"
-               ReferencedContainer = "container:Example.xcodeproj">
+               BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
+               BuildableName = "JSQNotificationObserverKit.framework"
+               BlueprintName = "JSQNotificationObserverKit"
+               ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88F82FF61A2D86ED008596F4"
-               BuildableName = "ExampleTests.xctest"
-               BlueprintName = "ExampleTests"
-               ReferencedContainer = "container:Example.xcodeproj">
+               BlueprintIdentifier = "887D75EE1ABFBD7A00AAE6E7"
+               BuildableName = "JSQNotificationObserverKitTests.xctest"
+               BlueprintName = "JSQNotificationObserverKitTests"
+               ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88F82FF61A2D86ED008596F4"
-               BuildableName = "ExampleTests.xctest"
-               BlueprintName = "ExampleTests"
-               ReferencedContainer = "container:Example.xcodeproj">
+               BlueprintIdentifier = "887D75EE1ABFBD7A00AAE6E7"
+               BuildableName = "JSQNotificationObserverKitTests.xctest"
+               BlueprintName = "JSQNotificationObserverKitTests"
+               ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88F82FE11A2D86ED008596F4"
-            BuildableName = "Example.app"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:Example.xcodeproj">
+            BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
+            BuildableName = "JSQNotificationObserverKit.framework"
+            BlueprintName = "JSQNotificationObserverKit"
+            ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,15 +72,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88F82FE11A2D86ED008596F4"
-            BuildableName = "Example.app"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:Example.xcodeproj">
+            BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
+            BuildableName = "JSQNotificationObserverKit.framework"
+            BlueprintName = "JSQNotificationObserverKit"
+            ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +90,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88F82FE11A2D86ED008596F4"
-            BuildableName = "Example.app"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:Example.xcodeproj">
+            BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
+            BuildableName = "JSQNotificationObserverKit.framework"
+            BlueprintName = "JSQNotificationObserverKit"
+            ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
