@@ -1,8 +1,10 @@
 # JSQNotificationObserverKit
 
-*Generic notifications and observers for iOS*
+*Generic notifications and observers for iOS, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
 
 ## About
+
+See objc.io's [snippet #16](http://www.objc.io/snippets/16.html) on *Typed Notification Observers*.
 
 > TODO:
 
