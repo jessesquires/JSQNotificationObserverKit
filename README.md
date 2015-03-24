@@ -48,6 +48,8 @@ $ open _docs/
 import JSQNotificationObserverKit
 ````
 
+>See the included unit tests for more examples and usage.
+
 #### Example
 
 ````swift
@@ -91,6 +93,22 @@ observer = NotificationObserver(notification: notification) { (value, sender) in
 
 // unregister observer, stop listening for notifications
 observer = nil
+````
+
+#### Using a custom queue and notification center
+
+````swift
+// Initialize an observer and post a notification
+// with a custom notification center and operation queue
+let c = NSNotificationCenter.defaultCenter()
+
+let q = NSOperationQueue.mainQueue()
+
+let observer = NotificationObserver(notification: n, queue: q, center: c) { (value, sender) in
+    // handle notification
+}
+
+postNotification(n, value: v, center: c)
 ````
 
 ## Unit tests
