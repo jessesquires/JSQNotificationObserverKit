@@ -48,6 +48,31 @@ $ open _docs/
 import JSQNotificationObserverKit
 ````
 
+#### Example
+
+````swift
+// Suppose we have a UIView that posts a notification when its size changes
+let myView = UIView()
+
+// This notification posts a CGSize value from a UIView sender
+let notification = Notification<CGSize, UIView>(name: "NewViewSizeNotif", sender: myView)
+
+// Register observer, start lisening for the notification
+var observer: NotificationObserver<CGSize, UIView>?
+
+observer = NotificationObserver(notification: notification) { (value, sender) in
+    // handle notification
+    // the value and sender are both passed here
+}
+
+// Post a notification with the updated CGSize value
+let newViewSize = CGSizeMake(200, 200)
+postNotification(notification, value: newViewSize)
+
+// unregister observer, stop listening for notifications
+observer = nil
+````
+
 ## Unit tests
 
 There's a suite of unit tests for the `JSQNotificationObserverKit.framework`. To run them, open `JSQNotificationObserverKit.xcodeproj`, select the `JSQNotificationObserverKit` scheme, then &#x2318;-u.
