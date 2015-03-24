@@ -2,4 +2,3 @@ NotificationObserver.swift
 	public init(name: String, sender: Sender? = nil)
 	public init(notification: Notification<V, S>, queue: NSOperationQueue? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter(), handler: NotificationHandler)
 	public init(notification: Notification<V, S>, queue: NSOperationQueue? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter(), handler: ValueSenderHandler)
-	deinit
