@@ -65,9 +65,29 @@ observer = NotificationObserver(notification: notification) { (value, sender) in
     // the value and sender are both passed here
 }
 
-// Post a notification with the updated CGSize value
+// Post the notification with the updated CGSize value
 let newViewSize = CGSizeMake(200, 200)
 postNotification(notification, value: newViewSize)
+
+// unregister observer, stop listening for notifications
+observer = nil
+````
+
+#### Notifications without a sender
+
+````swift
+// This notification posts a string value, the sender is nil
+let notification = Notification<String, AnyObject>(name: "StringNotif")
+
+// Post the notification
+postNotification(notification, value: "new string")
+
+// Register observer, this handles notifications from *any* sender
+var observer: NotificationObserver<String, AnyObject>?
+observer = NotificationObserver(notification: notification) { (value, sender) in
+    // handle notification
+    // the value is passed here, sender is nil
+}
 
 // unregister observer, stop listening for notifications
 observer = nil
