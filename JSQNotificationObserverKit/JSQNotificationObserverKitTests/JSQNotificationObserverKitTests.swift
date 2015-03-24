@@ -41,7 +41,7 @@ class JSQNotificationObserverKitTests: XCTestCase {
     func test_Example_NotificationEmptyTuple_WithoutSender() {
 
         // GIVEN: a notification
-        let notif = Notification<(), AnyObject>(name: "Notification")
+        let notif = Notification<Void, AnyObject>(name: "Notification")
 
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
