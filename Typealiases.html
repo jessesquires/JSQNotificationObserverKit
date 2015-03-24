@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Structs  Reference</title>
+    <title>Typealiases  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -20,7 +20,7 @@
     <script src="js/jazzy.js" defer></script>
   </head>
   <body id="reference" class="Swift">
-    <a title="Structs  Reference"></a>
+    <a title="Typealiases  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p class="header-text"><a href="index.html">JSQNotificationObserverKit Docs</a> (83% documented)</p>
@@ -32,7 +32,7 @@
         <p id="hierarchial_navigation">
         <a href="index.html" id="design_resources_link">JSQNotificationObserverKit Reference</a>
         <img id="carat" src="img/carat.png" height="10px" width="6px" />
-        Structs  Reference
+        Typealiases  Reference
         </p>
       </div>
     </section>
@@ -77,10 +77,10 @@
       <div class="rubber-band-gap"></div>
       <article class="chapter">
       <a name="/"></a>
-        <h1 class="chapter-name">Structs</h1>
+        <h1 class="chapter-name">Typealiases</h1>
         <section>
           <section class="section">
-            <p class="para">The following structs are available globally.</p>
+            <p class="para">The following typealiases are available globally.</p>
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -93,9 +93,9 @@
                 <li class="item symbol">
                   <div class="task-group-term">
                     <code>
-                    <a name="/s:V26JSQNotificationObserverKit12Notification">
-                    <a name="//apple_ref/swift/Struct/Notification" class="dashAnchor"></a>
-                    <a class="x-instance-method Swift" href="#/s:V26JSQNotificationObserverKit12Notification">Notification</a>
+                    <a name="/s:26JSQNotificationObserverKit8UserInfo">
+                    <a name="//apple_ref/swift/Alias/UserInfo" class="dashAnchor"></a>
+                    <a class="x-instance-method Swift" href="#/s:26JSQNotificationObserverKit8UserInfo">UserInfo</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -103,15 +103,14 @@
                     <section class="section instance-method">
                       <div class="pointy-thing"></div>
                       <div class="abstract">
-                        <p class="para">A typed notification that contains a name and optional sender. A <code>Notification</code> has the following type parameters: <code>&lt;Value, Sender: AnyObject&gt;</code>. The <code>Value</code> type parameter acts as a phantom type, restricting the notification to posting only values of this type.</p>
-                        <a href="Structs/Notification.html" class="see-more">See more</a>
+                        <p class="para">Describes a notification&rsquo;s userInfo dictionary</p>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
             
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Notification</span> <span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">Sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">UserInfo</span> <span class="o">=</span> <span class="p">[</span><span class="kt">NSObject</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
