@@ -24,7 +24,7 @@
     <a title="NotificationObserver Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p class="header-text"><a href="../index.html">JSQNotificationObserverKit Docs</a> (0% documented)</p>
+        <p class="header-text"><a href="../index.html">JSQNotificationObserverKit Docs</a> (71% documented)</p>
         <p id="header-links"><a href="https://github.com/jessesquires/JSQNotificationObserverKit"><img id="header-icon" src="../img/gh.png" height="16px" width="16px" />View on GitHub</a></p>
       </div>
     </header>
@@ -52,7 +52,7 @@
           <a href="../Functions.html">Functions</a>
             <ul class="nav-chapters">
               <li class="nav-chapter">
-                <a href="../Functions.html#/s:F26JSQNotificationObserverKit16postNotificationU_Ss9AnyObject__FTGVS_12NotificationQ_Q0__5valueQ_6senderGSqQ0__6centerCSo20NSNotificationCenter_T_">postNotification(_:value:sender:center:)</a>
+                <a href="../Functions.html#/s:F26JSQNotificationObserverKit16postNotificationU_Ss9AnyObject__FTGVS_12NotificationQ_Q0__5valueQ_6centerCSo20NSNotificationCenter_T_">postNotification(_:value:center:)</a>
               </li>
             </ul>
           </li>
@@ -73,22 +73,26 @@
         <h1 class="chapter-name">NotificationObserver</h1>
         <section>
           <section class="section">
-            <p class="para">Undocumented</p>
+            <p class="para">An instance of <code>NotificationObserver</code> is responsible for observing notifications. It has the same type parameters as <code>Notification</code>, namely <code>&lt;V, S: AnyObject&gt;</code>. When an observer is initialized, it will immediately begin listening for its specified notification,  by registering with the specified notification center.</p>
           </section>
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
                 
-                <a name="/Unnamed"></a>
+                <a name="/Typealiases"></a>
+                <a name="//apple_ref/swift/Section/Typealiases" class="dashAnchor"></a>
+                <a href="#/Typealiases">
+                  <h3 class="section-name">Typealiases</h3>
+                </a>
                 
               </div>
               <ul class="task-group-list">
                 <li class="item symbol">
                   <div class="task-group-term">
                     <code>
-                    <a name="/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__6senderGSqQ0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFCSo14NSNotificationT__GS0_Q_Q0__">
-                    <a name="//apple_ref/swift/Method/init(notification:sender:queue:center:handler:)" class="dashAnchor"></a>
-                    <a class="x-instance-method Swift" href="#/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__6senderGSqQ0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFCSo14NSNotificationT__GS0_Q_Q0__">init(notification:sender:queue:center:handler:)</a>
+                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver18ValueSenderHandler">
+                    <a name="//apple_ref/swift/Alias/ValueSenderHandler" class="dashAnchor"></a>
+                    <a class="x-instance-method Swift" href="#/s:C26JSQNotificationObserverKit20NotificationObserver18ValueSenderHandler">ValueSenderHandler</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -96,7 +100,47 @@
                     <section class="section instance-method">
                       <div class="pointy-thing"></div>
                       <div class="abstract">
-                        <p class="para">Undocumented</p>
+                        <p class="para">A closure to be called when a notification is received.</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+            
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ValueSenderHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">V</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">S</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="parameters">
+                        <h4>Parameters</h4>
+                        <table class="graybox" border="0" cellspacing="0" cellpadding="5">
+                          <tbody>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The data value sent with the notification.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The object that sent the notification, or <code>nil</code> if the notification is not associated with a specific sender.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -104,9 +148,9 @@
                 <li class="item symbol">
                   <div class="task-group-term">
                     <code>
-                    <a name="/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__6senderGSqQ0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFT5valueQ_6senderGSqQ0___T__GS0_Q_Q0__">
-                    <a name="//apple_ref/swift/Method/init(notification:sender:queue:center:handler:)" class="dashAnchor"></a>
-                    <a class="x-instance-method Swift" href="#/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__6senderGSqQ0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFT5valueQ_6senderGSqQ0___T__GS0_Q_Q0__">init(notification:sender:queue:center:handler:)</a>
+                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver19NotificationHandler">
+                    <a name="//apple_ref/swift/Alias/NotificationHandler" class="dashAnchor"></a>
+                    <a class="x-instance-method Swift" href="#/s:C26JSQNotificationObserverKit20NotificationObserver19NotificationHandler">NotificationHandler</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -114,7 +158,209 @@
                     <section class="section instance-method">
                       <div class="pointy-thing"></div>
                       <div class="abstract">
-                        <p class="para">Undocumented</p>
+                        <p class="para">A closure to be called when a notification is received.</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+            
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">NotificationHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="parameters">
+                        <h4>Parameters</h4>
+                        <table class="graybox" border="0" cellspacing="0" cellpadding="5">
+                          <tbody>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The notification received.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item symbol">
+                  <div class="task-group-term">
+                    <code>
+                    <a name="/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFT12notificationCSo14NSNotification_T__GS0_Q_Q0__">
+                    <a name="//apple_ref/swift/Method/init(notification:queue:center:handler:)" class="dashAnchor"></a>
+                    <a class="x-instance-method Swift" href="#/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFT12notificationCSo14NSNotification_T__GS0_Q_Q0__">init(notification:queue:center:handler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointy-thing-container"></div>
+                    <section class="section instance-method">
+                      <div class="pointy-thing"></div>
+                      <div class="abstract">
+                        <p class="para">Constructs a new <code>NotificationObserver</code> instance and immediately registers to begin observing the specified <code>notification</code>. To unregister this observer and end listening for notifications, dealloc the object by setting it to <code>nil</code>.</p>
+                        <a href="../Classes/NotificationObserver/init(notification:queue:center:handler:).html" class="see-more">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+            
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">,</span> <span class="kt">S</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">queue</span><span class="p">:</span> <span class="kt">NSOperationQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">NSNotificationCenter</span> <span class="o">=</span> <span class="kt">NSNotificationCenter</span><span class="o">.</span><span class="nf">defaultCenter</span><span class="p">(),</span> <span class="nv">handler</span><span class="p">:</span> <span class="kt">NotificationHandler</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="parameters">
+                        <h4>Parameters</h4>
+                        <table class="graybox" border="0" cellspacing="0" cellpadding="5">
+                          <tbody>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The notification for which to register the observer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">queue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The operation queue to which <code>handler</code> should be added.  If <code>nil</code>, the block is run synchronously on the posting thread. The default parameter value is <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">center</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The notification center from which the notification should be dispatched. The default parameter value is <code>NSNotificationCenter.defaultCenter()</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">handler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The closure to execute when the notification is received.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="result-description">
+                        <h4>Return Value</h4>
+                        <p class="para">A new <code>NotificationObserver</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item symbol">
+                  <div class="task-group-term">
+                    <code>
+                    <a name="/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFT5valueQ_6senderGSqQ0___T__GS0_Q_Q0__">
+                    <a name="//apple_ref/swift/Method/init(notification:queue:center:handler:)" class="dashAnchor"></a>
+                    <a class="x-instance-method Swift" href="#/s:FC26JSQNotificationObserverKit20NotificationObservercU_Ss9AnyObject__FMGS0_Q_Q0__FT12notificationGVS_12NotificationQ_Q0__5queueGSqCSo16NSOperationQueue_6centerCSo20NSNotificationCenter7handlerFT5valueQ_6senderGSqQ0___T__GS0_Q_Q0__">init(notification:queue:center:handler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointy-thing-container"></div>
+                    <section class="section instance-method">
+                      <div class="pointy-thing"></div>
+                      <div class="abstract">
+                        <p class="para">Constructs a new <code>NotificationObserver</code> instance and immediately registers to begin observing the specified <code>notification</code>. To unregister this observer and end listening for notifications, dealloc the object by setting it to <code>nil</code>.</p>
+                        <a href="../Classes/NotificationObserver/init(notification:queue:center:handler:).html" class="see-more">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+            
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">,</span> <span class="kt">S</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">queue</span><span class="p">:</span> <span class="kt">NSOperationQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">NSNotificationCenter</span> <span class="o">=</span> <span class="kt">NSNotificationCenter</span><span class="o">.</span><span class="nf">defaultCenter</span><span class="p">(),</span> <span class="nv">handler</span><span class="p">:</span> <span class="kt">ValueSenderHandler</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="parameters">
+                        <h4>Parameters</h4>
+                        <table class="graybox" border="0" cellspacing="0" cellpadding="5">
+                          <tbody>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The notification for which to register the observer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">queue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The operation queue to which <code>handler</code> should be added. If <code>nil</code>, the block is run synchronously on the posting thread. The default parameter value is <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">center</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The notification center from which the notification should be dispatched. The default parameter value is <code>NSNotificationCenter.defaultCenter()</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">
+                                <code>
+                                <em class="term">handler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div class="definition">
+                                  <p class="para">The closure to execute when the notification is received.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="result-description">
+                        <h4>Return Value</h4>
+                        <p class="para">A new <code>NotificationObserver</code> instance.</p>
                       </div>
                     </section>
                   </div>
