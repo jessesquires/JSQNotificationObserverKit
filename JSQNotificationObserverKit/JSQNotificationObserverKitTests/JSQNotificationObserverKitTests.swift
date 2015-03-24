@@ -38,15 +38,13 @@ class JSQNotificationObserverKitTests: XCTestCase {
     func test() {
 
         // GIVEN: a notification, sender, and observer
-        let notification = Notification<FakeValue, FakeSender>(name: "\(__FUNCTION__)")
-
         let fakeSender = FakeSender()
-
         let fakeValue = FakeValue()
+        let notification = Notification<FakeValue, FakeSender>(name: "\(__FUNCTION__)", sender: fakeSender)
 
         let expectation = self.expectationWithDescription("\(__FUNCTION__)")
 
-        let observer = NotificationObserver(notification: notification, sender: fakeSender) { (value, sender) -> Void in
+        let observer = NotificationObserver(notification: notification) { (value, sender) -> Void in
 
             XCTAssertEqual(value.value, fakeValue.value, "Values should be equal")
             XCTAssertEqual(fakeSender.sender, sender!.sender, "Senders should be equal")
@@ -55,7 +53,7 @@ class JSQNotificationObserverKitTests: XCTestCase {
         }
 
         // WHEN: we post the notification
-        postNotification(notification, value: fakeValue, sender: fakeSender)
+        postNotification(notification, value: fakeValue)
 
         // THEN: the notification is received
         self.waitForExpectationsWithTimeout(2, handler: { (error) -> Void in
