@@ -1,0 +1,9 @@
+NotificationObserver.swift
+	public struct Notification <Value, Sender: AnyObject>
+	public let name: String
+	public init(name: String)
+	public func postNotification<V, S: AnyObject> (notification: Notification<V, S>, #value: V, sender: S? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter())
+	public final class NotificationObserver <V, S: AnyObject>
+	public init(notification: Notification<V, S>, sender: S? = nil, queue: NSOperationQueue? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter(), handler: NotificationHandler)
+	public init(notification: Notification<V, S>, sender: S? = nil, queue: NSOperationQueue? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter(), handler: Handler)
+	deinit
