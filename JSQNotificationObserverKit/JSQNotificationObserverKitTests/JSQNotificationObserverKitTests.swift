@@ -38,6 +38,28 @@ struct TestValue {
 
 class JSQNotificationObserverKitTests: XCTestCase {
 
+    func test_Example_NotificationEmptyTuple_WithoutSender() {
+
+        // GIVEN: a notification
+        let notif = Notification<(), AnyObject>(name: "Notification")
+
+        let expect = self.expectationWithDescription("\(__FUNCTION__)")
+
+        // GIVEN: an observer
+        let observer = NotificationObserver(notification: notif) { (value, sender) -> Void in
+            XCTAssertNil(sender, "Sender should be nil")
+            expect.fulfill()
+        }
+
+        // WHEN: the notification is posted
+        postNotification(notif, value: ())
+
+        // THEN: the observer receives the notification and executes its handler
+        self.waitForExpectationsWithTimeout(2, handler: { (error) -> Void in
+            XCTAssertNil(error, "Expectation should not error")
+        })
+    }
+
     func test_Example_NotificationDictionary_WithSender() {
 
         // GIVEN: a userInfo dictionary
