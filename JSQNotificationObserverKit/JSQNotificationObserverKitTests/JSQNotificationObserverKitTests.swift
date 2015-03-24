@@ -17,6 +17,8 @@
 //
 
 import XCTest
+import Foundation
+import UIKit
 
 import JSQNotificationObserverKit
 
@@ -150,7 +152,7 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
         // WHEN: the notification is posted after the observer is dealloc'd
         postNotification(notification, value: fakeValue)
-
+        
         // THEN: the observer does not receive the notification and does not execute its handler
         XCTAssertFalse(didCallHandler)
     }
