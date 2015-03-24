@@ -48,9 +48,19 @@ $ open _docs/
 import JSQNotificationObserverKit
 ````
 
+## Unit tests
+
+There's a suite of unit tests for the `JSQNotificationObserverKit.framework`. To run them, open `JSQNotificationObserverKit.xcodeproj`, select the `JSQNotificationObserverKit` scheme, then &#x2318;-u.
+
+These tests are well commented and serve as further documentation for how to use this library.
+
 ## Contribute
 
 Please follow these sweet [contribution guidelines](https://github.com/jessesquires/HowToContribute).
+
+## Credits
+
+Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires)
 
 ## License
 
