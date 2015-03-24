@@ -61,7 +61,7 @@ public func postNotification<V, S: AnyObject> (notification: Notification<V, S>,
 
 ///  An instance of `NotificationObserver` is responsible for observing notifications.
 ///  It has the same type parameters as `Notification`, namely `<V, S: AnyObject>`.
-///  When an observer is initialized, it will immediately begin listening for its specified notification,
+///  When an observer is initialized, it will immediately begin listening for its specified notification
 ///  by registering with the specified notification center.
 public final class NotificationObserver <V, S: AnyObject> {
 
