@@ -18,6 +18,10 @@
 
 import Foundation
 
+///  Describes a notification's userInfo dictionary
+public typealias UserInfo = [NSObject : AnyObject]
+
+
 ///  A typed notification that contains a name and optional sender.
 ///  A `Notification` has the following type parameters: `<Value, Sender: AnyObject>`.
 ///  The `Value` type parameter acts as a phantom type, restricting the notification to posting only values of this type.
