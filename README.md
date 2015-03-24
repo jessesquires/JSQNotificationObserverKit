@@ -77,6 +77,8 @@ observer = nil
 
 #### Notifications without a sender
 
+Not all notifications are associated with a specific sender object. Here's how to handle `nil` sender in `JSQNotificationObserverKit`. This observer will respond to notifications *regardless* of the instances sending them.
+
 ````swift
 // This notification posts a string value, the sender is nil
 let notification = Notification<String, AnyObject>(name: "StringNotif")
@@ -97,6 +99,8 @@ observer = nil
 
 #### Using a custom queue and notification center
 
+You can optionally pass an `NSOperationQueue` and `NSNotificationCenter`. The default values are `nil` and `NSNotificationCenter.defaultCenter()`, respectively.
+
 ````swift
 // Initialize an observer and post a notification
 // with a custom notification center and operation queue
@@ -110,6 +114,23 @@ let observer = NotificationObserver(notification: n, queue: q, center: c) { (val
 
 postNotification(n, value: v, center: c)
 ````
+
+#### Notifications without a value
+
+Not all notifications are associated with a specific value, for example `UIApplicationDidReceiveMemoryWarningNotification`.
+
+````swift
+let notification = Notification<Void, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
+
+let observer = NotificationObserver(notification: notification) { (value, sender) -> Void in
+    // handle notification
+    // value is an empty tuple, sender is nil
+}
+
+// notification value is `Void`, so pass the empty tuple `()`
+postNotification(notification, value: ())
+````
+
 
 ## Unit tests
 
