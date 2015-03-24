@@ -86,7 +86,7 @@ class JSQNotificationObserverKitTests: XCTestCase {
         })
     }
 
-    func test_ThatObserverUnregistersForNotificationsOnDeinit() {
+    func test_ThatObserverUnregistersForNotificationsOnDeinit_WithValueSenderHandler() {
 
         // GIVEN: a value, notification, and observer
         let fakeValue = TestValue()
