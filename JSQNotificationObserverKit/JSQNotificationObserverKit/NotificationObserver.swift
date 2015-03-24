@@ -39,13 +39,21 @@ public final class NotificationObserver <V, S: AnyObject> {
 
     public typealias Handler = (value: V, sender: S?) -> Void
 
+    public typealias NotificationHandler = (NSNotification) -> Void
+
     private let observerProxy: NSObjectProtocol
 
     private let center: NSNotificationCenter
 
+    public init(notification: Notification<V, S>, sender: S? = nil, queue: NSOperationQueue? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter(), handler: NotificationHandler) {
+        self.center = center
+        observerProxy = center.addObserverForName(notification.name, object: sender, queue: queue, usingBlock: { (note) -> Void in
+            handler(note)
+        })
+    }
+
     public init(notification: Notification<V, S>, sender: S? = nil, queue: NSOperationQueue? = nil, center: NSNotificationCenter = NSNotificationCenter.defaultCenter(), handler: Handler) {
         self.center = center
-
         observerProxy = center.addObserverForName(notification.name, object: sender, queue: queue, usingBlock: { (notification: NSNotification!) -> Void in
             if let value: V = unboxUserInfo(notification.userInfo) {
                 handler(value: value, sender: notification.object as? S)
@@ -57,6 +65,7 @@ public final class NotificationObserver <V, S: AnyObject> {
         center.removeObserver(observerProxy)
     }
 }
+
 
 // MARK: Private
 
