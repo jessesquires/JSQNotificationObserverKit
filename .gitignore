@@ -1,6 +1,6 @@
-.DS_Store
-
 # Xcode
+
+.DS_Store
 build/
 *.pbxuser
 !default.pbxuser
@@ -19,4 +19,9 @@ DerivedData
 *.xcuserstate
 
 # CocoaPods
+
 Pods/
+
+# jazzy docs
+
+_docs/
