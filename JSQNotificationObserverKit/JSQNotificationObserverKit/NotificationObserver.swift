@@ -103,7 +103,7 @@ public final class NotificationObserver <V, S: AnyObject> {
         })
     }
 
-    ///  Deinitializer for this class.
+    ///  :nodoc:
     deinit {
         center.removeObserver(observerProxy)
     }
