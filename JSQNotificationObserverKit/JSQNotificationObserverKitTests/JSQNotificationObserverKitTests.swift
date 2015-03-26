@@ -161,9 +161,9 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
     func test_ThatObserverUnregistersForNotificationsOnDeinit_WithValueSenderHandler() {
 
-        // GIVEN: a value, notification, and observer
+        // GIVEN: a notification and observer
         let fakeValue = TestValue()
-        let notification = Notification<TestValue, AnyObject>(name: "NotificationName")
+        let notification = Notification<TestValue, TestSender>(name: "NotificationName", sender: TestSender())
 
         var didCallHandler = false
         var observer: NotificationObserver? = NotificationObserver(notification: notification, handler: { (value, sender) -> Void in
