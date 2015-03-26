@@ -5,4 +5,4 @@ before_install:
 - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 
 script: 
-- xcodebuild clean build test -project JSQNotificationObserverKit/JSQNotificationObserverKit.xcodeproj -scheme JSQNotificationObserverKit -sdk iphonesimulator8.1 ONLY_ACTIVE_ARCH=NO
+- xctool clean build test -project JSQNotificationObserverKit/JSQNotificationObserverKit.xcodeproj -scheme JSQNotificationObserverKit -sdk iphonesimulator8.1 ONLY_ACTIVE_ARCH=NO

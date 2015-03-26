@@ -46,10 +46,10 @@ class JSQNotificationObserverKitTests: XCTestCase {
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif) { (value, sender) -> Void in
+        let observer = NotificationObserver(notification: notif, handler: { (value, sender) -> Void in
             XCTAssertNil(sender, "Sender should be nil")
             expect.fulfill()
-        }
+        })
 
         // WHEN: the notification is posted
         postNotification(notif, value: ())
@@ -71,11 +71,11 @@ class JSQNotificationObserverKitTests: XCTestCase {
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif) { (value, sender) -> Void in
+        let observer = NotificationObserver(notification: notif, handler: { (value, sender) -> Void in
             XCTAssertEqual(value, userInfo, "Value should equal expected value")
             XCTAssertEqual(sender!, self, "Sender should equal expected sender")
             expect.fulfill()
-        }
+        })
 
         // WHEN: the notification is posted
         postNotification(notif, value: userInfo)
@@ -97,11 +97,11 @@ class JSQNotificationObserverKitTests: XCTestCase {
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif, queue: NSOperationQueue.mainQueue(), center: NSNotificationCenter.defaultCenter()) { (value, sender) -> Void in
+        let observer = NotificationObserver(notification: notif, queue: NSOperationQueue.mainQueue(), center: NSNotificationCenter.defaultCenter(), handler: { (value, sender) -> Void in
             XCTAssertEqual(value, userInfo, "Value should equal expected value")
             XCTAssertNil(sender, "Sender should be nil")
             expect.fulfill()
-        }
+        })
 
         // WHEN: the notification is posted
         postNotification(notif, value: userInfo)
@@ -121,11 +121,11 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
         let expectation = self.expectationWithDescription("\(__FUNCTION__)")
 
-        let observer = NotificationObserver(notification: notification) { (value, sender) -> Void in
+        let observer = NotificationObserver(notification: notification, handler: { (value, sender) -> Void in
             XCTAssertEqual(value.value, fakeValue.value, "Values should be equal")
             XCTAssertEqual(fakeSender.sender, sender!.sender, "Senders should be equal")
             expectation.fulfill()
-        }
+        })
 
         // WHEN: the notification is posted
         postNotification(notification, value: fakeValue)
@@ -144,11 +144,11 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
         let expectation = self.expectationWithDescription("\(__FUNCTION__)")
 
-        let observer = NotificationObserver(notification: notification) { (value, sender) -> Void in
+        let observer = NotificationObserver(notification: notification, handler: { (value, sender) -> Void in
             XCTAssertEqual(value.value, fakeValue.value, "Values should be equal")
             XCTAssertNil(sender, "Sender should be nil")
             expectation.fulfill()
-        }
+        })
 
         // WHEN: the notification is posted without a specific sender
         postNotification(notification, value: fakeValue)
@@ -166,9 +166,9 @@ class JSQNotificationObserverKitTests: XCTestCase {
         let notification = Notification<TestValue, AnyObject>(name: "NotificationName")
 
         var didCallHandler = false
-        var observer: NotificationObserver? = NotificationObserver(notification: notification) { (value, sender) -> Void in
+        var observer: NotificationObserver? = NotificationObserver(notification: notification, handler: { (value, sender) -> Void in
             didCallHandler = true
-        }
+        })
 
         observer = nil
 

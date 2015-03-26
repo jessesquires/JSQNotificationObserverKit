@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880659751AC4AC6700005BF5 /* JSQNotificationObserverKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		887D75EA1ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		887D75F01ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; };
 		887D75F71ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */; };
@@ -22,6 +23,20 @@
 			remoteInfo = JSQNotificationObserverKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		880659741AC4AC5B00005BF5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				880659751AC4AC6700005BF5 /* JSQNotificationObserverKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationObserverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +159,7 @@
 				887D75EB1ABFBD7A00AAE6E7 /* Sources */,
 				887D75EC1ABFBD7A00AAE6E7 /* Frameworks */,
 				887D75ED1ABFBD7A00AAE6E7 /* Resources */,
+				880659741AC4AC5B00005BF5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,6 +422,7 @@
 				887D75FC1ABFBD7A00AAE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		887D75FD1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +431,7 @@
 				887D75FF1ABFBD7A00AAE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
