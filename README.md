@@ -71,7 +71,7 @@ observer = NotificationObserver(notification: notification) { (value, sender) in
 // Post the notification with the updated CGSize value
 postNotification(notification, value: CGSizeMake(200, 200))
 
-// unregister observer, stop listening for notifications
+// Unregister observer, stop listening for notifications
 observer = nil
 ````
 
