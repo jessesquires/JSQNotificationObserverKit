@@ -59,17 +59,17 @@ let myView = UIView()
 // This notification posts a CGSize value from a UIView sender
 let notification = Notification<CGSize, UIView>(name: "NewViewSizeNotif", sender: myView)
 
-// Register observer, start lisening for the notification
+// This observer listens for the notification described above
 var observer: NotificationObserver<CGSize, UIView>?
 
+// Register observer, start lisening for the notification
 observer = NotificationObserver(notification: notification) { (value, sender) in
     // handle notification
     // the value and sender are both passed here
 }
 
 // Post the notification with the updated CGSize value
-let newViewSize = CGSizeMake(200, 200)
-postNotification(notification, value: newViewSize)
+postNotification(notification, value: CGSizeMake(200, 200))
 
 // unregister observer, stop listening for notifications
 observer = nil
