@@ -62,7 +62,7 @@ let notification = Notification<CGSize, UIView>(name: "NewViewSizeNotif", sender
 // This observer listens for the notification described above
 var observer: NotificationObserver<CGSize, UIView>?
 
-// Register observer, start lisening for the notification
+// Register observer, start listening for the notification
 observer = NotificationObserver(notification: notification) { (value, sender) in
     // handle notification
     // the value and sender are both passed here
