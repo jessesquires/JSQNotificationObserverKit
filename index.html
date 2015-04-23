@@ -5,92 +5,204 @@
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
-    <script type="text/javascript">
-    window.jazzy = {'docset': false}
-    if (typeof window.dash != 'undefined') {
-      document.documentElement.className += ' dash'
-      window.jazzy.docset = true
-    }
-    if (navigator.userAgent.match(/xcode/i)) {
-      document.documentElement.className += ' xcode'
-      window.jazzy.docset = true
-    }
-    </script>
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
   </head>
-  <body id="reference" class="Swift">
+  <body>
     <a title="JSQNotificationObserverKit  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p class="header-text"><a href="index.html">JSQNotificationObserverKit Docs</a> (100% documented)</p>
-        <p id="header-links"><a href="https://github.com/jessesquires/JSQNotificationObserverKit"><img id="header-icon" src="img/gh.png" height="16px" width="16px" />View on GitHub</a></p>
+        <p><a href="index.html">JSQNotificationObserverKit Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/jessesquires/JSQNotificationObserverKit"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
-    <section id="valence">
-      <div class="content-wrapper">
-        <p id="hierarchial_navigation">
-        <a href="index.html" id="design_resources_link">JSQNotificationObserverKit Reference</a>
-        <img id="carat" src="img/carat.png" height="10px" width="6px" />
-        JSQNotificationObserverKit  Reference
-        </p>
-      </div>
-    </section>
     <div class="content-wrapper">
-      <nav class="book-parts">
-        <ul class="nav-parts">
-          <li class="part-name tasks">
+      <p id="breadcrumbs">
+        <a href="index.html">JSQNotificationObserverKit Reference</a>
+        <img id="carat" src="img/carat.png" />
+        JSQNotificationObserverKit  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
           <a href="Classes.html">Classes</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Classes/NotificationObserver.html">NotificationObserver</a>
               </li>
             </ul>
           </li>
-          <li class="part-name tasks">
+          <li class="nav-group-name">
           <a href="Functions.html">Functions</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:F26JSQNotificationObserverKit16postNotificationU_Ss9AnyObject__FTGVS_12NotificationQ_Q0__5valueQ_6centerCSo20NSNotificationCenter_T_">postNotification(_:value:center:)</a>
               </li>
             </ul>
           </li>
-          <li class="part-name tasks">
+          <li class="nav-group-name">
           <a href="Structs.html">Structs</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Structs/Notification.html">Notification</a>
               </li>
             </ul>
           </li>
-          <li class="part-name tasks">
+          <li class="nav-group-name">
           <a href="Typealiases.html">Typealiases</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Typealiases.html#/s:26JSQNotificationObserverKit8UserInfo">UserInfo</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
-      <div class="pixel-line"></div>
-      <div class="rubber-band-gap"></div>
-      <article class="chapter">
-      <a name="/"></a>
-        <h1 class="chapter-name">JSQNotificationObserverKit</h1>
+      <article class="main-content">
         <section>
           <section class="section">
-            <div class='readme'><p class="para"><em>Generic notifications and observers for iOS</em></p><p class="para">See the <a href="https://github.com/jessesquires/JSQNotificationObserverKit">README</a> on GitHub for more information.</p><a href='#credits' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='credits'>Credits</h2>
-<p class="para">Created and maintained by <a href="https://twitter.com/jesse_squires"><strong>@jesse_squires</strong></a></p><a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
-<p class="para"><code>JSQNotificationObserverKit</code> is released under an <a href="http://opensource.org/licenses/MIT">MIT License</a>. See <code>LICENSE</code> for details.</p>
+            
+            <a href='#jsqnotificationobserverkit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='jsqnotificationobserverkit'>JSQNotificationObserverKit</h1>
+
+<p><a href="http://travis-ci.org/jessesquires/JSQNotificationObserverKit"><img src="https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg" alt="Build Status"></a> <a href="http://www.jessesquires.com/JSQNotificationObserverKit"><img src="http://img.shields.io/cocoapods/v/JSQNotificationObserverKit.png" alt="Version Status"></a> <a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-orange.png" alt="license MIT"></a></p>
+
+<p><em>Generic notifications and observers for iOS, inspired by <a href="http://www.objc.io/snippets/16.html">objc.io</a></em></p>
+<a href='#about' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='about'>About</h2>
+
+<p>This framework aims to provide better semantics regarding notifications and moves the responsibilty of observing and handling notifications to a lightweight, single-purpose object. It also brings type-safety and a cleaner interface to <code>NSNotificationCenter</code>. See objc.io&rsquo;s <a href="http://www.objc.io/snippets/16.html">snippet #16</a> on <em>Typed Notification Observers</em> for more information.</p>
+<a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
+
+<ul>
+<li>iOS 8</li>
+<li>Swift 1.1</li>
+</ul>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p>From <a href="http://cocoapods.org">CocoaPods</a>:</p>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+
+<span class="c1"># For latest release in cocoapods</span>
+<span class="n">pod</span> <span class="s1">'JSQNotificationObserverKit'</span>  
+
+<span class="c1"># Feeling adventurous? Get the latest on develop</span>
+<span class="n">pod</span> <span class="s1">'JSQNotificationObserverKit'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/jessesquires/JSQNotificationObserverKit.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'develop'</span>
+</code></pre>
+
+<p>Manually:</p>
+
+<p>Add the <code>NotificationObserver.swift</code> file to your project.</p>
+<a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='documentation'>Documentation</h2>
+
+<p>Read the fucking <a href="http://www.jessesquires.com/JSQNotificationObserverKit">docs</a>. Generated with <a href="https://github.com/realm/jazzy">jazzy</a>. Hosted by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+<pre class="highlight shell"><code><span class="c"># regenerate documentation</span>
+<span class="gp">$ </span><span class="nb">cd</span> /path/to/JSQNotificationObserverKit/
+<span class="gp">$ </span>./build_docs.sh
+<span class="gp">$ </span>open _docs/
+</code></pre>
+<a href='#getting_started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='getting_started'>Getting Started</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">JSQNotificationObserverKit</span>
+</code></pre>
+
 <blockquote>
-<p class="para"><strong>Copyright &copy; 2015 Jesse Squires.</strong></p></blockquote>
-</div>
+<p>See the included unit tests for more examples and usage.</p>
+</blockquote>
+<a href='#example' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example'>Example</h4>
+<pre class="highlight swift"><code><span class="c1">// Suppose we have a UIView that posts a notification when its size changes</span>
+<span class="k">let</span> <span class="nv">myView</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+
+<span class="c1">// This notification posts a CGSize value from a UIView sender</span>
+<span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">CGSize</span><span class="p">,</span> <span class="kt">UIView</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"NewViewSizeNotif"</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="n">myView</span><span class="p">)</span>
+
+<span class="c1">// This observer listens for the notification described above</span>
+<span class="k">var</span> <span class="nv">observer</span><span class="p">:</span> <span class="kt">NotificationObserver</span><span class="o">&lt;</span><span class="kt">CGSize</span><span class="p">,</span> <span class="kt">UIView</span><span class="o">&gt;</span><span class="p">?</span>
+
+<span class="c1">// Register observer, start listening for the notification</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">notification</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// handle notification</span>
+    <span class="c1">// the value and sender are both passed here</span>
+<span class="p">}</span>
+
+<span class="c1">// Post the notification with the updated CGSize value</span>
+<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CGSizeMake</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+
+<span class="c1">// Unregister observer, stop listening for notifications</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="kc">nil</span>
+</code></pre>
+<a href='#notifications_without_a_sender' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='notifications_without_a_sender'>Notifications without a sender</h4>
+
+<p>Not all notifications are associated with a specific sender object. Here&rsquo;s how to handle <code>nil</code> sender in <code>JSQNotificationObserverKit</code>. This observer will respond to notifications <em>regardless</em> of the instances sending them.</p>
+<pre class="highlight swift"><code><span class="c1">// This notification posts a string value, the sender is nil</span>
+<span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"StringNotif"</span><span class="p">)</span>
+
+<span class="c1">// Post the notification</span>
+<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"new string"</span><span class="p">)</span>
+
+<span class="c1">// Register observer, this handles notifications from *any* sender</span>
+<span class="k">var</span> <span class="nv">observer</span><span class="p">:</span> <span class="kt">NotificationObserver</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">?</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">notification</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// handle notification</span>
+    <span class="c1">// the value is passed here, sender is nil</span>
+<span class="p">}</span>
+
+<span class="c1">// unregister observer, stop listening for notifications</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="kc">nil</span>
+</code></pre>
+<a href='#using_a_custom_queue_and_notification_center' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='using_a_custom_queue_and_notification_center'>Using a custom queue and notification center</h4>
+
+<p>You can optionally pass an <code>NSOperationQueue</code> and <code>NSNotificationCenter</code>. The default values are <code>nil</code> and <code>NSNotificationCenter.defaultCenter()</code>, respectively.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize an observer and post a notification</span>
+<span class="c1">// with a custom notification center and operation queue</span>
+<span class="k">let</span> <span class="nv">c</span> <span class="o">=</span> <span class="kt">NSNotificationCenter</span><span class="o">.</span><span class="nf">defaultCenter</span><span class="p">()</span>
+
+<span class="k">let</span> <span class="nv">q</span> <span class="o">=</span> <span class="kt">NSOperationQueue</span><span class="o">.</span><span class="nf">mainQueue</span><span class="p">()</span>
+
+<span class="k">let</span> <span class="nv">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="nv">queue</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="nv">center</span><span class="p">:</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// handle notification</span>
+<span class="p">}</span>
+
+<span class="nf">postNotification</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">v</span><span class="p">,</span> <span class="nv">center</span><span class="p">:</span> <span class="n">c</span><span class="p">)</span>
+</code></pre>
+<a href='#notifications_without_a_value' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='notifications_without_a_value'>Notifications without a value</h4>
+
+<p>Not all notifications are associated with a specific value, for example <code>UIApplicationDidReceiveMemoryWarningNotification</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">UIApplicationDidReceiveMemoryWarningNotification</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">notification</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
+    <span class="c1">// handle notification</span>
+    <span class="c1">// value is an empty tuple, sender is nil</span>
+<span class="p">}</span>
+
+<span class="c1">// notification value is `Void`, so pass the empty tuple `()`</span>
+<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="p">())</span>
+</code></pre>
+<a href='#unit_tests' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='unit_tests'>Unit tests</h2>
+
+<p>There&rsquo;s a suite of unit tests for the <code>JSQNotificationObserverKit.framework</code>. To run them, open <code>JSQNotificationObserverKit.xcodeproj</code>, select the <code>JSQNotificationObserverKit</code> scheme, then &#x2318;-u.</p>
+
+<p>These tests are well commented and serve as further documentation for how to use this library.</p>
+<a href='#contribute' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contribute'>Contribute</h2>
+
+<p>Please follow these sweet <a href="https://github.com/jessesquires/HowToContribute">contribution guidelines</a>.</p>
+<a href='#credits' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='credits'>Credits</h2>
+
+<p>Created and maintained by <a href="https://twitter.com/jesse_squires"><strong>@jesse_squires</strong></a></p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p><code>JSQNotificationObserverKit</code> is released under an <a href="http://opensource.org/licenses/MIT">MIT License</a>. See <code>LICENSE</code> for details.</p>
+
+<blockquote>
+<p><strong>Copyright &copy; 2015 Jesse Squires.</strong></p>
+</blockquote>
+
+<p><em>Please provide attribution, it is greatly appreciated.</em></p>
+
           </section>
         </section>
         <section id="footer">
-          <p class="copyright">&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-03-25)</p>
-          <p class="copyright">Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.1.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-04-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

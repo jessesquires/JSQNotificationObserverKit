@@ -5,110 +5,93 @@
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
-    <script type="text/javascript">
-    window.jazzy = {'docset': false}
-    if (typeof window.dash != 'undefined') {
-      document.documentElement.className += ' dash'
-      window.jazzy.docset = true
-    }
-    if (navigator.userAgent.match(/xcode/i)) {
-      document.documentElement.className += ' xcode'
-      window.jazzy.docset = true
-    }
-    </script>
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
   </head>
-  <body id="reference" class="Swift">
+  <body>
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p class="header-text"><a href="index.html">JSQNotificationObserverKit Docs</a> (100% documented)</p>
-        <p id="header-links"><a href="https://github.com/jessesquires/JSQNotificationObserverKit"><img id="header-icon" src="img/gh.png" height="16px" width="16px" />View on GitHub</a></p>
+        <p><a href="index.html">JSQNotificationObserverKit Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/jessesquires/JSQNotificationObserverKit"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
-    <section id="valence">
-      <div class="content-wrapper">
-        <p id="hierarchial_navigation">
-        <a href="index.html" id="design_resources_link">JSQNotificationObserverKit Reference</a>
-        <img id="carat" src="img/carat.png" height="10px" width="6px" />
-        Classes  Reference
-        </p>
-      </div>
-    </section>
     <div class="content-wrapper">
-      <nav class="book-parts">
-        <ul class="nav-parts">
-          <li class="part-name tasks">
+      <p id="breadcrumbs">
+        <a href="index.html">JSQNotificationObserverKit Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Classes  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
           <a href="Classes.html">Classes</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Classes/NotificationObserver.html">NotificationObserver</a>
               </li>
             </ul>
           </li>
-          <li class="part-name tasks">
+          <li class="nav-group-name">
           <a href="Functions.html">Functions</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:F26JSQNotificationObserverKit16postNotificationU_Ss9AnyObject__FTGVS_12NotificationQ_Q0__5valueQ_6centerCSo20NSNotificationCenter_T_">postNotification(_:value:center:)</a>
               </li>
             </ul>
           </li>
-          <li class="part-name tasks">
+          <li class="nav-group-name">
           <a href="Structs.html">Structs</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Structs/Notification.html">Notification</a>
               </li>
             </ul>
           </li>
-          <li class="part-name tasks">
+          <li class="nav-group-name">
           <a href="Typealiases.html">Typealiases</a>
-            <ul class="nav-chapters">
-              <li class="nav-chapter">
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
                 <a href="Typealiases.html#/s:26JSQNotificationObserverKit8UserInfo">UserInfo</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
-      <div class="pixel-line"></div>
-      <div class="rubber-band-gap"></div>
-      <article class="chapter">
-      <a name="/"></a>
-        <h1 class="chapter-name">Classes</h1>
+      <article class="main-content">
         <section>
           <section class="section">
-            <p class="para">The following classes are available globally.</p>
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
-              <div class="task-name-container">
-                
-                <a name="/Unnamed"></a>
-                
-              </div>
-              <ul class="task-group-list">
-                <li class="item symbol">
-                  <div class="task-group-term">
+              <ul>
+                <li class="item">
+                  <div>
                     <code>
-                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver">
+                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver"></a>
                     <a name="//apple_ref/swift/Class/NotificationObserver" class="dashAnchor"></a>
-                    <a class="x-instance-method Swift" href="#/s:C26JSQNotificationObserverKit20NotificationObserver">NotificationObserver</a>
+                    <a class="token" href="#/s:C26JSQNotificationObserverKit20NotificationObserver">NotificationObserver</a>
                     </code>
                   </div>
                   <div class="height-container">
-                    <div class="pointy-thing-container"></div>
-                    <section class="section instance-method">
-                      <div class="pointy-thing"></div>
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
                       <div class="abstract">
-                        <p class="para">An instance of <code>NotificationObserver</code> is responsible for observing notifications. It has the same type parameters as <code>Notification</code>, namely <code>&lt;V, S: AnyObject&gt;</code>. When an observer is initialized, it will immediately begin listening for its specified notification by registering with the specified notification center.</p>
-                        <a href="Classes/NotificationObserver.html" class="see-more">See more</a>
+                        <p>An instance of <code>NotificationObserver</code> is responsible for observing notifications.
+It has the same type parameters as <code>Notification</code>, namely <code>&lt;V, S: AnyObject&gt;</code>.
+When an observer is initialized, it will immediately begin listening for its specified notification
+by registering with the specified notification center.</p>
+
+                        <a href="Classes/NotificationObserver.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-            
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">NotificationObserver</span> <span class="o">&lt;</span><span class="kt">V</span><span class="p">,</span> <span class="kt">S</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="o">&gt;</span></code></pre>
@@ -123,8 +106,8 @@
           </section>
         </section>
         <section id="footer">
-          <p class="copyright">&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-03-25)</p>
-          <p class="copyright">Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.1.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-04-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
