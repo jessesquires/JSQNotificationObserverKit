@@ -15,7 +15,7 @@ This framework aims to provide better semantics regarding notifications and move
 
 ## Installation
 
-From [CocoaPods](http://cocoapods.org):
+#### [CocoaPods](http://cocoapods.org)
 
 ````ruby
 use_frameworks!
@@ -27,7 +27,7 @@ pod 'JSQNotificationObserverKit'
 pod 'JSQNotificationObserverKit', :git => 'https://github.com/jessesquires/JSQNotificationObserverKit.git', :branch => 'develop'
 ````
 
-Manually:
+#### Manually
 
 Add the `NotificationObserver.swift` file to your project.
 
