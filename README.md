@@ -1,6 +1,6 @@
 # JSQNotificationObserverKit
 
-[![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](http://img.shields.io/cocoapods/v/JSQNotificationObserverKit.png)][docsLink] [![license MIT](http://img.shields.io/badge/license-MIT-orange.png)][mitLink]
+[![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](http://img.shields.io/cocoapods/v/JSQNotificationObserverKit.png)][docsLink] [![license MIT](http://img.shields.io/badge/license-MIT-orange.png)][mitLink] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 *Generic notifications and observers for iOS, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
 
@@ -25,6 +25,12 @@ pod 'JSQNotificationObserverKit'
 
 # Feeling adventurous? Get the latest on develop
 pod 'JSQNotificationObserverKit', :git => 'https://github.com/jessesquires/JSQNotificationObserverKit.git', :branch => 'develop'
+````
+
+#### [Carthage](https://github.com/Carthage/Carthage)
+
+````bash
+github "jessesquires/JSQNotificationObserverKit"
 ````
 
 #### Manually
