@@ -1,0 +1,4 @@
+[submodule "JSQNotificationObserverKit"]
+	path = JSQNotificationObserverKit
+	url = https://github.com/jessesquires/JSQNotificationObserverKit.git
+	branch = develop
