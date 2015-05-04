@@ -41,12 +41,7 @@ Add the `NotificationObserver.swift` file to your project.
 
 Read the fucking [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
 
-````bash
-# regenerate documentation
-$ cd /path/to/JSQNotificationObserverKit/
-$ ./build_docs.sh
-$ open _docs/
-````
+More information on the [gh-pages](https://github.com/jessesquires/JSQNotificationObserverKit/tree/gh-pages) branch.
 
 ## Getting Started
 
