@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
    
    s.summary = 'Generic notifications and observers for iOS'
    s.homepage = 'https://github.com/jessesquires/JSQNotificationObserverKit'
+   s.documentation_url = 'http://jessesquires.com/JSQNotificationObserverKit'
    s.social_media_url = 'https://twitter.com/jesse_squires'
    s.authors = { 'Jesse Squires' => 'jesse.squires.developer@gmail.com' }
 
