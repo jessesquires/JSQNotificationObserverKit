@@ -1,7 +1,7 @@
 language: objective-c
 
 before_install: 
-- pip install codecov
+- xctool -project JSQNotificationObserverKit/JSQNotificationObserverKit.xcodeproj -scheme JSQNotificationObserverKit build test -sdk iphonesimulator8.1 GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 - brew update
 - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 
@@ -9,4 +9,4 @@ script:
 - xctool clean build test -project JSQNotificationObserverKit/JSQNotificationObserverKit.xcodeproj -scheme JSQNotificationObserverKit -sdk iphonesimulator8.1 ONLY_ACTIVE_ARCH=NO
 
 after_success:
-- codecov
+- bash <(curl -s https://codecov.io/bash)
