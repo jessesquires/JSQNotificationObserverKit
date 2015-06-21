@@ -11,7 +11,7 @@ This framework aims to provide better semantics regarding notifications and move
 ## Requirements
 
 * iOS 8
-* Swift 1.1
+* Swift 2.0
 
 ## Installation
 
@@ -21,7 +21,7 @@ This framework aims to provide better semantics regarding notifications and move
 use_frameworks!
 
 # For latest release in cocoapods
-pod 'JSQNotificationObserverKit'  
+pod 'JSQNotificationObserverKit'
 
 # Feeling adventurous? Get the latest on develop
 pod 'JSQNotificationObserverKit', :git => 'https://github.com/jessesquires/JSQNotificationObserverKit.git', :branch => 'develop'
@@ -123,7 +123,7 @@ Not all notifications are associated with a specific value, for example `UIAppli
 ````swift
 let notification = Notification<Void, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
 
-let observer = NotificationObserver(notification: notification) { (value, sender) -> Void in
+let observer = NotificationObserver(notification: notification) { (value, sender) in
     // handle notification
     // value is an empty tuple, sender is nil
 }

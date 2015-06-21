@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		880659751AC4AC6700005BF5 /* JSQNotificationObserverKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		886C35221B365733004B64EF /* JSQNotificationObserverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C35211B365733004B64EF /* JSQNotificationObserverKitTests.swift */; };
+		886C35241B365733004B64EF /* JSQNotificationObserverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; };
 		887D75EA1ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		887D75F01ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; };
-		887D75F71ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */; };
 		887D76021ABFBE8200AAE6E7 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		887D75F11ABFBD7A00AAE6E7 /* PBXContainerItemProxy */ = {
+		886C35251B365733004B64EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 887D75DB1ABFBD7A00AAE6E7 /* Project object */;
 			proxyType = 1;
@@ -24,31 +23,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		880659741AC4AC5B00005BF5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				880659751AC4AC6700005BF5 /* JSQNotificationObserverKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		886C351F1B365733004B64EF /* JSQNotificationObserverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSQNotificationObserverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		886C35211B365733004B64EF /* JSQNotificationObserverKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQNotificationObserverKitTests.swift; sourceTree = "<group>"; };
+		886C35231B365733004B64EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationObserverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887D75E81ABFBD7A00AAE6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSQNotificationObserverKit.h; sourceTree = "<group>"; };
-		887D75EF1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSQNotificationObserverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		887D75F51ABFBD7A00AAE6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQNotificationObserverKitTests.swift; sourceTree = "<group>"; };
 		887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		886C351C1B365733004B64EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886C35241B365733004B64EF /* JSQNotificationObserverKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		887D75E01ABFBD7A00AAE6E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,22 +49,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		887D75EC1ABFBD7A00AAE6E7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				887D75F01ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		886C35201B365733004B64EF /* JSQNotificationObserverKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				886C35211B365733004B64EF /* JSQNotificationObserverKitTests.swift */,
+				886C352A1B36573B004B64EF /* Supporting Files */,
+			);
+			path = JSQNotificationObserverKitTests;
+			sourceTree = "<group>";
+		};
+		886C352A1B36573B004B64EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				886C35231B365733004B64EF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		887D75DA1ABFBD7A00AAE6E7 = {
 			isa = PBXGroup;
 			children = (
 				887D75E61ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */,
-				887D75F31ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */,
+				886C35201B365733004B64EF /* JSQNotificationObserverKitTests */,
 				887D75E51ABFBD7A00AAE6E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */,
-				887D75EF1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.xctest */,
+				886C351F1B365733004B64EF /* JSQNotificationObserverKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,23 +105,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		887D75F31ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				887D75F61ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift */,
-				887D75F41ABFBD7A00AAE6E7 /* Supporting Files */,
-			);
-			path = JSQNotificationObserverKitTests;
-			sourceTree = "<group>";
-		};
-		887D75F41ABFBD7A00AAE6E7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				887D75F51ABFBD7A00AAE6E7 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -134,6 +119,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		886C351E1B365733004B64EF /* JSQNotificationObserverKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886C35271B365733004B64EF /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */;
+			buildPhases = (
+				886C351B1B365733004B64EF /* Sources */,
+				886C351C1B365733004B64EF /* Frameworks */,
+				886C351D1B365733004B64EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				886C35261B365733004B64EF /* PBXTargetDependency */,
+			);
+			name = JSQNotificationObserverKitTests;
+			productName = JSQNotificationObserverKitTests;
+			productReference = 886C351F1B365733004B64EF /* JSQNotificationObserverKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 887D75FA1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKit" */;
@@ -152,38 +155,20 @@
 			productReference = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		887D75EE1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 887D75FD1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */;
-			buildPhases = (
-				887D75EB1ABFBD7A00AAE6E7 /* Sources */,
-				887D75EC1ABFBD7A00AAE6E7 /* Frameworks */,
-				887D75ED1ABFBD7A00AAE6E7 /* Resources */,
-				880659741AC4AC5B00005BF5 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				887D75F21ABFBD7A00AAE6E7 /* PBXTargetDependency */,
-			);
-			name = JSQNotificationObserverKitTests;
-			productName = JSQNotificationObserverKitTests;
-			productReference = 887D75EF1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		887D75DB1ABFBD7A00AAE6E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Hexed Bits";
 				TargetAttributes = {
-					887D75E31ABFBD7A00AAE6E7 = {
-						CreatedOnToolsVersion = 6.3;
+					886C351E1B365733004B64EF = {
+						CreatedOnToolsVersion = 7.0;
 					};
-					887D75EE1ABFBD7A00AAE6E7 = {
+					887D75E31ABFBD7A00AAE6E7 = {
 						CreatedOnToolsVersion = 6.3;
 					};
 				};
@@ -201,20 +186,20 @@
 			projectRoot = "";
 			targets = (
 				887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */,
-				887D75EE1ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests */,
+				886C351E1B365733004B64EF /* JSQNotificationObserverKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		887D75E21ABFBD7A00AAE6E7 /* Resources */ = {
+		886C351D1B365733004B64EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		887D75ED1ABFBD7A00AAE6E7 /* Resources */ = {
+		887D75E21ABFBD7A00AAE6E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,6 +209,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		886C351B1B365733004B64EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886C35221B365733004B64EF /* JSQNotificationObserverKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		887D75DF1ABFBD7A00AAE6E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,25 +225,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		887D75EB1ABFBD7A00AAE6E7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				887D75F71ABFBD7A00AAE6E7 /* JSQNotificationObserverKitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		887D75F21ABFBD7A00AAE6E7 /* PBXTargetDependency */ = {
+		886C35261B365733004B64EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */;
-			targetProxy = 887D75F11ABFBD7A00AAE6E7 /* PBXContainerItemProxy */;
+			targetProxy = 886C35251B365733004B64EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		886C35281B365733004B64EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = JSQNotificationObserverKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.JSQNotificationObserverKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		886C35291B365733004B64EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JSQNotificationObserverKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.JSQNotificationObserverKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		887D75F81ABFBD7A00AAE6E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -273,6 +281,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -350,7 +359,8 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JSQNotificationObserverKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -367,45 +377,24 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JSQNotificationObserverKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		887D75FE1ABFBD7A00AAE6E7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = JSQNotificationObserverKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		887D75FF1ABFBD7A00AAE6E7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = JSQNotificationObserverKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		886C35271B365733004B64EF /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886C35281B365733004B64EF /* Debug */,
+				886C35291B365733004B64EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		887D75DE1ABFBD7A00AAE6E7 /* Build configuration list for PBXProject "JSQNotificationObserverKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -420,15 +409,6 @@
 			buildConfigurations = (
 				887D75FB1ABFBD7A00AAE6E7 /* Debug */,
 				887D75FC1ABFBD7A00AAE6E7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		887D75FD1ABFBD7A00AAE6E7 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				887D75FE1ABFBD7A00AAE6E7 /* Debug */,
-				887D75FF1ABFBD7A00AAE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
