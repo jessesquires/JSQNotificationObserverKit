@@ -24,7 +24,10 @@ public typealias UserInfo = [NSObject : AnyObject]
 
 /**
 A typed notification that contains a name and optional sender.
-A `Notification` has the following type parameters: `<Value, Sender: AnyObject>`.
+A `Notification` has the following type parameters: 
+```swift
+Notification<Value, Sender: AnyObject>
+```
 The `Value` type parameter acts as a phantom type, restricting the notification to posting only values of this type.
 */
 public struct Notification <Value, Sender: AnyObject> {
@@ -57,8 +60,11 @@ public struct Notification <Value, Sender: AnyObject> {
 
 /**
 Posts the given notification to the specified center.
-This function has the same type parameters as `Notification`, namely `<V, S: AnyObject>`, 
-which restricts the type of value that can be posted.
+This function has the same type parameters as `Notification`:
+```swift
+postNotification<V, S: AnyObject>
+```
+These type parameters restrict the type of value that can be posted.
 
 - parameter notification: The notification to post.
 - parameter value:        The data to be sent with the notification.
@@ -72,7 +78,10 @@ public func postNotification<V, S: AnyObject> (notification: Notification<V, S>,
 
 /**
 An instance of `NotificationObserver` is responsible for observing notifications.
-It has the same type parameters as `Notification`, namely `<V, S: AnyObject>`.
+It has the same type parameters as `Notification`:
+```swift
+NotificationObserver <V, S: AnyObject>
+```
 When an observer is initialized, it will immediately begin listening for its specified notification
 by registering with the specified notification center.
 */
