@@ -73,7 +73,7 @@ class JSQNotificationObserverKitTests: XCTestCase {
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif, handler: { (value, sender) in
+        let observer = NotificationObserver(notification: notif, handler: { [weak self] (value, sender) in
             XCTAssertEqual(value, userInfo, "Value should equal expected value")
             XCTAssertEqual(sender!, self, "Sender should equal expected sender")
             expect.fulfill()
