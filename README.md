@@ -10,7 +10,7 @@ This framework aims to provide better semantics regarding notifications and move
 
 ## Requirements
 
-* iOS 8
+* iOS 8+
 * Swift 2.0
 
 ## Installation
@@ -151,7 +151,7 @@ Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires
 
 `JSQNotificationObserverKit` is released under an [MIT License][mitLink]. See `LICENSE` for details.
 
->**Copyright &copy; 2015 Jesse Squires.**
+>**Copyright &copy; 2015-present Jesse Squires.**
 
 *Please provide attribution, it is greatly appreciated.*
 
