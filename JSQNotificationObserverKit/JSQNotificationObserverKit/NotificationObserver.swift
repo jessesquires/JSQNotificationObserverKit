@@ -23,6 +23,31 @@ public typealias UserInfo = [NSObject : AnyObject]
 
 
 /**
+:param: lhs A UserInfo instance.
+:param: rhs A UserInfo instance.
+
+:returns: True lhs is equal to rhs, false otherwise.
+*/
+public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
+    guard lhs.count == rhs.count else {
+        return false;
+    }
+
+    for (key, value) in lhs {
+        guard let rhsValue = rhs[key] else {
+            return false
+        }
+
+        if !rhsValue.isEqual(value) {
+            return false
+        }
+    }
+
+    return true
+}
+
+
+/**
 A typed notification that contains a name and optional sender.
 A `Notification` has the following type parameters: 
 ```swift
@@ -135,7 +160,7 @@ public final class NotificationObserver <V, S: AnyObject> {
 // MARK: Private
 
 // Key for user info dictionary
-private let UserInfoValueKey = "value"
+private let UserInfoValueKey = "UserInfoValueKey"
 
 // This class allows the "boxing up" instances that are not reference types
 private final class Box<T> {
@@ -152,7 +177,7 @@ private func userInfo<T>(value: T) -> [String : Box<T>] {
 }
 
 // Unbox user info dictionary
-private func unboxUserInfo<T>(userInfo: [NSObject: AnyObject]?) -> T? {
+private func unboxUserInfo<T>(userInfo: UserInfo?) -> T? {
     if let box = userInfo?[UserInfoValueKey] as? Box<T> {
         return box.value
     }
