@@ -169,6 +169,31 @@ class JSQNotificationObserverKitTests: XCTestCase {
         })
     }
 
+    func test_ThatNotificationIsPosted_AndReceivedByObserver_TraditionalCocoa() {
+
+        // GIVEN: a "traditional Cocoa" notification, and observer
+        let notification = Notification<Any, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
+
+        let expectation = self.expectationWithDescription("\(__FUNCTION__)")
+
+        let observer = NotificationObserver(notification: notification, handler: { (notification: NSNotification) in
+            expectation.fulfill()
+        })
+
+        XCTAssertNotNil(observer)
+
+        // WHEN: the notification is posted "by the system"
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            notification.name,
+            object: notification.sender,
+            userInfo: nil)
+
+        // THEN: the observer receives the notification and executes its handler
+        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+            XCTAssertNil(error, "Expectation should not error")
+        })
+    }
+
     func test_ThatObserverUnregistersForNotificationsOnDeinit_WithValueSenderHandler() {
 
         // GIVEN: a notification and observer
