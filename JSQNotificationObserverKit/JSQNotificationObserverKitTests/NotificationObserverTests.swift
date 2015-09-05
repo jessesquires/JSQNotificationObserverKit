@@ -215,5 +215,42 @@ class JSQNotificationObserverKitTests: XCTestCase {
         // THEN: the observer does not receive the notification and does not execute its handler
         XCTAssertFalse(didCallHandler)
     }
+
+    func test_ThatUserInfoObjectsAreEqual() {
+        // GIVEN: two equal user info objects
+        let first: UserInfo = [
+            "key0": "fake value",
+            "key1": 234
+        ]
+
+        let second: UserInfo = [
+            "key0": "fake value",
+            "key1": 234
+        ]
+
+        // WHEN: we compare them
+        let result = (first == second)
+
+        // THEN: they are equal
+        XCTAssertTrue(result)
+    }
+
+    func test_ThatUserInfoObjectsAreNotEqual() {
+        // GIVEN: two distinct user info objects
+        let first: UserInfo = [
+            "key0": "fake value",
+            "key1": 234
+        ]
+
+        let second: UserInfo = [
+            "key0": "fake value"
+        ]
+
+        // WHEN: we compare them
+        let result = (first == second)
+
+        // THEN: they are not equal
+        XCTAssertFalse(result)
+    }
     
 }
