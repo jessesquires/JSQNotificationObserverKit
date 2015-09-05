@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		886C35221B365733004B64EF /* JSQNotificationObserverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C35211B365733004B64EF /* JSQNotificationObserverKitTests.swift */; };
+		886C35221B365733004B64EF /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C35211B365733004B64EF /* NotificationObserverTests.swift */; };
 		886C35241B365733004B64EF /* JSQNotificationObserverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; };
 		887D75EA1ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		887D76021ABFBE8200AAE6E7 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		886C351F1B365733004B64EF /* JSQNotificationObserverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSQNotificationObserverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		886C35211B365733004B64EF /* JSQNotificationObserverKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQNotificationObserverKitTests.swift; sourceTree = "<group>"; };
+		886C35211B365733004B64EF /* NotificationObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
 		886C35231B365733004B64EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationObserverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887D75E81ABFBD7A00AAE6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		886C35201B365733004B64EF /* JSQNotificationObserverKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				886C35211B365733004B64EF /* JSQNotificationObserverKitTests.swift */,
+				886C35211B365733004B64EF /* NotificationObserverTests.swift */,
 				886C352A1B36573B004B64EF /* Supporting Files */,
 			);
 			path = JSQNotificationObserverKitTests;
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				886C35221B365733004B64EF /* JSQNotificationObserverKitTests.swift in Sources */,
+				886C35221B365733004B64EF /* NotificationObserverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +394,7 @@
 				886C35291B365733004B64EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		887D75DE1ABFBD7A00AAE6E7 /* Build configuration list for PBXProject "JSQNotificationObserverKit" */ = {
 			isa = XCConfigurationList;
