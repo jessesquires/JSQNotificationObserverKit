@@ -118,20 +118,33 @@ postNotification(n, value: v, center: c)
 
 #### Notifications without a value
 
-Not all notifications are associated with a specific value, for example `UIApplicationDidReceiveMemoryWarningNotification`.
+Not all notifications are associated with a specific value. Sometimes notifications are used to simply broadcast an event, for example `UIApplicationDidReceiveMemoryWarningNotification`.
 
 ````swift
-let notification = Notification<Void, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
+let notification = Notification<Any?, AnyObject>(name: "MyEventNotification")
 
 let observer = NotificationObserver(notification: notification) { (value, sender) in
     // handle notification
-    // value is an empty tuple, sender is nil
+    // value is nil, sender is nil
 }
 
-// notification value is `Void`, so pass the empty tuple `()`
-postNotification(notification, value: ())
+// notification value is `Any?`, so pass nil
+postNotification(notification, value: nil)
 ````
 
+#### Working with "traditional" Cocoa notifications
+
+The library can also handle "traditional" notifications that are posted by the OS. Instead of using the `(value, sender)` handler, use the `(notification)` handler which passes the full `NSNotification` object.
+
+````swift
+let notification = Notification<Any, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
+
+let observer = NotificationObserver(notification: notification, handler: { (notification: NSNotification) in
+    // handle the notification
+})
+
+// the notification will be posted by iOS
+````
 
 ## Unit tests
 
@@ -145,7 +158,7 @@ Please follow these sweet [contribution guidelines](https://github.com/jessesqui
 
 ## Credits
 
-Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires)
+Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires).
 
 ## License
 
