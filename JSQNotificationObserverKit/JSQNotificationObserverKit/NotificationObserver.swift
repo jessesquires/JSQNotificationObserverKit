@@ -49,7 +49,7 @@ public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
 
 /**
 A typed notification that contains a name and optional sender.
-A `Notification` has the following type parameters: 
+A `Notification` has the following type parameters:
 ```swift
 Notification<Value, Sender: AnyObject>
 ```
@@ -94,7 +94,7 @@ These type parameters restrict the type of value that can be posted.
 - parameter notification: The notification to post.
 - parameter value:        The data to be sent with the notification.
 - parameter center:       The notification center from which the notification should be dispatched.
-                          The default is `NSNotificationCenter.defaultCenter()`.
+The default is `NSNotificationCenter.defaultCenter()`.
 */
 public func postNotification<V, S: AnyObject> (notification: Notification<V, S>, value: V, center: NSNotificationCenter = .defaultCenter()) {
     center.postNotificationName(notification.name, object: notification.sender, userInfo: userInfo(value))
@@ -120,7 +120,7 @@ public final class NotificationObserver <V, S: AnyObject> {
     - parameter value:  The data sent with the notification.
     - parameter sender: The object that sent the notification, or `nil` if the notification is not associated with a specific sender.
     */
-    public typealias Handler = (value: V, sender: S?) -> Void
+    public typealias ValueSenderHandler = (value: V, sender: S?) -> Void
 
     /**
     The closure to be called when an `NSNotification` is received.
@@ -145,20 +145,23 @@ public final class NotificationObserver <V, S: AnyObject> {
 
     - parameter notification: The notification for which to register the observer.
     - parameter queue:        The operation queue to which `handler` should be added.
-                              If `nil` (the default), the block is run synchronously on the posting thread.
+    If `nil` (the default), the block is run synchronously on the posting thread.
     - parameter center:       The notification center from which the notification should be dispatched.
-                              The default is `NSNotificationCenter.defaultCenter()`.
+    The default is `NSNotificationCenter.defaultCenter()`.
     - parameter handler:      The closure to execute when the notification is received.
 
     - returns: A new `NotificationObserver` instance.
     */
-    public init(notification: Notification<V, S>, queue: NSOperationQueue? = nil, center: NSNotificationCenter = .defaultCenter(), handler: Handler) {
-        self.center = center
-        observerProxy = center.addObserverForName(notification.name, object: notification.sender, queue: queue, usingBlock: { (notification: NSNotification) -> Void in
-            if let value: V = unboxUserInfo(notification.userInfo) {
-                handler(value: value, sender: notification.object as? S)
-            }
-        })
+    public convenience init(
+        notification: Notification<V, S>,
+        queue: NSOperationQueue? = nil,
+        center: NSNotificationCenter = .defaultCenter(),
+        handler: ValueSenderHandler) {
+            self.init(notification: notification, queue: queue, center: center, handler: { (notification: NSNotification) in
+                if let value: V = unboxUserInfo(notification.userInfo) {
+                    handler(value: value, sender: notification.object as? S)
+                }
+            })
     }
 
     /**
@@ -167,16 +170,20 @@ public final class NotificationObserver <V, S: AnyObject> {
 
     - parameter notification: The notification for which to register the observer.
     - parameter queue:        The operation queue to which `handler` should be added.
-                              If `nil` (the default), the block is run synchronously on the posting thread.
+    If `nil` (the default), the block is run synchronously on the posting thread.
     - parameter center:       The notification center from which the notification should be dispatched.
-                              The default is `NSNotificationCenter.defaultCenter()`.
+    The default is `NSNotificationCenter.defaultCenter()`.
     - parameter handler:      The closure to execute when the notification is received.
 
     - returns: A new `NotificationObserver` instance.
     */
-    public init(notification: Notification<V, S>, queue: NSOperationQueue? = nil, center: NSNotificationCenter = .defaultCenter(), handler: NotificationHandler) {
-        self.center = center
-        observerProxy = center.addObserverForName(notification.name, object: notification.sender, queue: queue, usingBlock: handler)
+    public init(
+        notification: Notification<V, S>,
+        queue: NSOperationQueue? = nil,
+        center: NSNotificationCenter = .defaultCenter(),
+        handler: NotificationHandler) {
+            self.center = center
+            observerProxy = center.addObserverForName(notification.name, object: notification.sender, queue: queue, usingBlock: handler)
     }
 
     /// :nodoc:
@@ -188,8 +195,10 @@ public final class NotificationObserver <V, S: AnyObject> {
 
 // MARK: Private
 
+
 // Key for user info dictionary
 private let UserInfoValueKey = "UserInfoValueKey"
+
 
 // This class allows the "boxing up" instances that are not reference types
 private final class Box<T> {
@@ -200,10 +209,12 @@ private final class Box<T> {
     }
 }
 
+
 // Create user info dictionary
 private func userInfo<T>(value: T) -> [String : Box<T>] {
     return [UserInfoValueKey : Box(value)]
 }
+
 
 // Unbox user info dictionary
 private func unboxUserInfo<T>(userInfo: UserInfo?) -> T? {
