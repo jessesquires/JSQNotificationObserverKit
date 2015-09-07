@@ -23,22 +23,35 @@ import UIKit
 import JSQNotificationObserverKit
 
 
+
 // MARK: Fakes
 
-class TestSender {
+class TestSender: Equatable {
     let sender = NSUUID().UUIDString
 }
 
-struct TestValue {
+struct TestValue: Equatable {
     let value = NSUUID().UUIDString
 }
 
+func ==(lhs: TestSender, rhs: TestSender) -> Bool {
+    return lhs.sender == rhs.sender
+}
 
-// MARK: Test case
+func ==(lhs: TestValue, rhs: TestValue) -> Bool {
+    return lhs.value == rhs.value
+}
 
-class JSQNotificationObserverKitTests: XCTestCase {
 
-    func test_Example_NotificationEmptyTuple_WithoutSender() {
+
+// MARK: Test cases
+
+let timeout = NSTimeInterval(3)
+
+
+class NotificationObserverTests: XCTestCase {
+
+    func test_ThatNotificationIsPostedAndReceived_WithEmptyTupleAndNoSender() {
 
         // GIVEN: a notification
         let notif = Notification<Void, AnyObject>(name: "Notification")
@@ -53,22 +66,22 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
         XCTAssertNotNil(observer)
 
-        // WHEN: the notification is posted
+        // WHEN: the notification is posted with an empty tuple and no sender
         postNotification(notif, value: ())
 
         // THEN: the observer receives the notification and executes its handler
-        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
             XCTAssertNil(error, "Expectation should not error")
         })
     }
 
-    func test_Example_NotificationDictionary_WithSender() {
+    func test_ThatNotificationIsPostedAndReceived_WithUserInfoAndSender() {
 
         // GIVEN: a userInfo dictionary
         let userInfo = ["someKey": 100, "anotherKey": NSDate()]
 
         // GIVEN: a notification
-        let notif = Notification<[String: NSObject], JSQNotificationObserverKitTests>(name: "ExampleNotification", sender: self)
+        let notif = Notification<[String: NSObject], NotificationObserverTests>(name: "ExampleNotification", sender: self)
 
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
@@ -81,16 +94,16 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
         XCTAssertNotNil(observer)
 
-        // WHEN: the notification is posted
+        // WHEN: the notification is posted with userInfo and no sender
         postNotification(notif, value: userInfo)
 
         // THEN: the observer receives the notification and executes its handler
-        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
             XCTAssertNil(error, "Expectation should not error")
         })
     }
 
-    func test_Example_NotificationDictionary_WithoutSender() {
+    func test_ThatNotificationIsPostedAndReceived_WithUserInfoAndNoSender() {
 
         // GIVEN: a userInfo dictionary
         let userInfo = ["someKey": 100, "anotherKey": NSDate()]
@@ -109,27 +122,28 @@ class JSQNotificationObserverKitTests: XCTestCase {
 
         XCTAssertNotNil(observer)
 
-        // WHEN: the notification is posted
+        // WHEN: the notification is posted with userInfo
         postNotification(notif, value: userInfo)
 
         // THEN: the observer receives the notification and executes its handler
-        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
             XCTAssertNil(error, "Expectation should not error")
         })
     }
 
-    func test_ThatNotificationIsPosted_AndReceivedByObserver_WithValueAndSender() {
+    func test_ThatNotificationIsPostedAndReceived_WithValueAndSender() {
 
-        // GIVEN: a sender, value, notification, and observer
+        // GIVEN: a sender, value, and notification
         let fakeSender = TestSender()
         let fakeValue = TestValue()
         let notification = Notification<TestValue, TestSender>(name: "NotificationName", sender: fakeSender)
 
         let expectation = self.expectationWithDescription("\(__FUNCTION__)")
 
+        // GIVEN: an observer
         let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
-            XCTAssertEqual(value.value, fakeValue.value, "Values should be equal")
-            XCTAssertEqual(fakeSender.sender, sender!.sender, "Senders should be equal")
+            XCTAssertEqual(value, fakeValue, "Values should be equal")
+            XCTAssertEqual(sender, fakeSender, "Senders should be equal")
             expectation.fulfill()
         })
 
@@ -139,19 +153,20 @@ class JSQNotificationObserverKitTests: XCTestCase {
         postNotification(notification, value: fakeValue)
 
         // THEN: the observer receives the notification and executes its handler
-        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
             XCTAssertNil(error, "Expectation should not error")
         })
     }
 
-    func test_ThatNotificationIsPosted_AndReceivedByObserver_WithValueOnly() {
+    func test_ThatNotificationIsPostedAndReceived_WithValueAndNoSender() {
 
-        // GIVEN: value, notification without a sender, and observer
+        // GIVEN: a value, and notification without a sender
         let fakeValue = TestValue()
         let notification = Notification<TestValue, AnyObject>(name: "NotificationName")
 
         let expectation = self.expectationWithDescription("\(__FUNCTION__)")
 
+        // GIVEN: an observer
         let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
             XCTAssertEqual(value.value, fakeValue.value, "Values should be equal")
             XCTAssertNil(sender, "Sender should be nil")
@@ -164,18 +179,44 @@ class JSQNotificationObserverKitTests: XCTestCase {
         postNotification(notification, value: fakeValue)
 
         // THEN: the observer receives the notification and executes its handler
-        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
             XCTAssertNil(error, "Expectation should not error")
         })
     }
 
-    func test_ThatNotificationIsPosted_AndReceivedByObserver_TraditionalCocoa() {
+    func test_ThatNotificationIsPostedAndReceived_WithNilValueAndNoSender() {
 
-        // GIVEN: a "traditional Cocoa" notification, and observer
+        // GIVEN: a notification with a sender
+        let notification = Notification<Any?, AnyObject>(name: "NotificationName")
+
+        let expectation = self.expectationWithDescription("\(__FUNCTION__)")
+
+        // GIVEN: an observer
+        let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
+            XCTAssertNil(value, "Value should be nil")
+            XCTAssertNil(sender, "Sender should be nil")
+            expectation.fulfill()
+        })
+
+        XCTAssertNotNil(observer)
+
+        // WHEN: the notification is posted without a specific sender
+        postNotification(notification, value: nil)
+
+        // THEN: the observer receives the notification and executes its handler
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
+            XCTAssertNil(error, "Expectation should not error")
+        })
+    }
+
+    func test_ThatNotificationIsPostedAndReceived_TraditionalCocoa() {
+
+        // GIVEN: a "traditional Cocoa" notification
         let notification = Notification<Any, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
 
         let expectation = self.expectationWithDescription("\(__FUNCTION__)")
 
+        // GIVEN: an "traditional Cocoa" observer
         let observer = NotificationObserver(notification: notification, handler: { (notification: NSNotification) in
             expectation.fulfill()
         })
@@ -189,12 +230,12 @@ class JSQNotificationObserverKitTests: XCTestCase {
             userInfo: nil)
 
         // THEN: the observer receives the notification and executes its handler
-        self.waitForExpectationsWithTimeout(2, handler: { (error) in
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
             XCTAssertNil(error, "Expectation should not error")
         })
     }
 
-    func test_ThatObserverUnregistersForNotificationsOnDeinit_WithValueSenderHandler() {
+    func test_ThatObserverUnregistersForNotificationsOnDeinit() {
 
         // GIVEN: a notification and observer
         let fakeValue = TestValue()
