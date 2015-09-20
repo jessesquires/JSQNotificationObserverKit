@@ -1,6 +1,6 @@
 # JSQNotificationObserverKit
 
-[![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](http://img.shields.io/cocoapods/v/JSQNotificationObserverKit.png)][docsLink] [![license MIT](http://img.shields.io/badge/license-MIT-orange.png)][mitLink] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](http://img.shields.io/cocoapods/v/JSQNotificationObserverKit.png)][podLink] [![license MIT](http://img.shields.io/badge/license-MIT-orange.png)][mitLink] [![Platform](https://cocoapod-badges.herokuapp.com/p/JSQNotificationObserverKit/badge.png)][docsLink] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 *Generic notifications and observers for iOS, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
 
@@ -170,3 +170,4 @@ Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires
 
 [mitLink]:http://opensource.org/licenses/MIT
 [docsLink]:http://www.jessesquires.com/JSQNotificationObserverKit
+[podLink]:https://cocoapods.org/pods/JSQNotificationObserverKit
