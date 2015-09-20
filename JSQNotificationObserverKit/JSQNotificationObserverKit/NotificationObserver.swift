@@ -26,7 +26,7 @@ public typealias UserInfo = [NSObject : AnyObject]
 - parameter lhs: A UserInfo instance.
 - parameter rhs: A UserInfo instance.
 
-- returns: True if lhs is equal to rhs, false otherwise.
+- returns: True if `lhs` is equal to `rhs`, false otherwise.
 */
 public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
     guard lhs.count == rhs.count else {
