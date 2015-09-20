@@ -38,7 +38,10 @@
           <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F26JSQNotificationObserverKit16postNotificationU_Ss9AnyObject__FTGVS_12NotificationQ_Q0__5valueQ_6centerCSo20NSNotificationCenter_T_">postNotification(_:value:center:)</a>
+                <a href="Functions.html#/s:ZF26JSQNotificationObserverKitoi2eeFTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__GS0_S1_PS2____Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:F26JSQNotificationObserverKit16postNotificationu0_Rq0_Ss9AnyObject_FTGVS_12Notificationq_q0__5valueq_6centerCSo20NSNotificationCenter_T_">postNotification(_:value:center:)</a>
               </li>
             </ul>
           </li>
@@ -75,15 +78,15 @@
 <a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
 
 <ul>
-<li>iOS 8</li>
-<li>Swift 1.1</li>
+<li>iOS 8+</li>
+<li>Swift 2.0</li>
 </ul>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
 <a href='#a_href_http_cocoapods_org_cocoapods_a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a_href_http_cocoapods_org_cocoapods_a'><a href="http://cocoapods.org">CocoaPods</a></h4>
 <pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
 
 <span class="c1"># For latest release in cocoapods</span>
-<span class="n">pod</span> <span class="s1">'JSQNotificationObserverKit'</span>  
+<span class="n">pod</span> <span class="s1">'JSQNotificationObserverKit'</span>
 
 <span class="c1"># Feeling adventurous? Get the latest on develop</span>
 <span class="n">pod</span> <span class="s1">'JSQNotificationObserverKit'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/jessesquires/JSQNotificationObserverKit.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'develop'</span>
@@ -164,16 +167,27 @@
 </code></pre>
 <a href='#notifications_without_a_value' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='notifications_without_a_value'>Notifications without a value</h4>
 
-<p>Not all notifications are associated with a specific value, for example <code>UIApplicationDidReceiveMemoryWarningNotification</code>.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">UIApplicationDidReceiveMemoryWarningNotification</span><span class="p">)</span>
+<p>Not all notifications are associated with a specific value. Sometimes notifications are used to simply broadcast an event, for example <code>UIApplicationDidReceiveMemoryWarningNotification</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">Any</span><span class="p">?,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyEventNotification"</span><span class="p">)</span>
 
-<span class="k">let</span> <span class="nv">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">notification</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">notification</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span> <span class="k">in</span>
     <span class="c1">// handle notification</span>
-    <span class="c1">// value is an empty tuple, sender is nil</span>
+    <span class="c1">// value is nil, sender is nil</span>
 <span class="p">}</span>
 
-<span class="c1">// notification value is `Void`, so pass the empty tuple `()`</span>
-<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="p">())</span>
+<span class="c1">// notification value is `Any?`, so pass nil</span>
+<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre>
+<a href='#working_with_q_traditional_q_cocoa_notifications' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='working_with_q_traditional_q_cocoa_notifications'>Working with <q>traditional</q> Cocoa notifications</h4>
+
+<p>The library can also handle <q>traditional</q> notifications that are posted by the OS. Instead of using the <code>(value, sender)</code> handler, use the <code>(notification)</code> handler which passes the full <code>NSNotification</code> object.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">Any</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">UIApplicationDidReceiveMemoryWarningNotification</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">observer</span> <span class="o">=</span> <span class="kt">NotificationObserver</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="n">notification</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// handle the notification</span>
+<span class="p">})</span>
+
+<span class="c1">// the notification will be posted by iOS</span>
 </code></pre>
 <a href='#unit_tests' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='unit_tests'>Unit tests</h2>
 
@@ -185,13 +199,13 @@
 <p>Please follow these sweet <a href="https://github.com/jessesquires/HowToContribute">contribution guidelines</a>.</p>
 <a href='#credits' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='credits'>Credits</h2>
 
-<p>Created and maintained by <a href="https://twitter.com/jesse_squires"><strong>@jesse_squires</strong></a></p>
+<p>Created and maintained by <a href="https://twitter.com/jesse_squires"><strong>@jesse_squires</strong></a>.</p>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
 
 <p><code>JSQNotificationObserverKit</code> is released under an <a href="http://opensource.org/licenses/MIT">MIT License</a>. See <code>LICENSE</code> for details.</p>
 
 <blockquote>
-<p><strong>Copyright &copy; 2015 Jesse Squires.</strong></p>
+<p><strong>Copyright &copy; 2015-present Jesse Squires.</strong></p>
 </blockquote>
 
 <p><em>Please provide attribution, it is greatly appreciated.</em></p>
@@ -199,8 +213,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-05-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-09-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
