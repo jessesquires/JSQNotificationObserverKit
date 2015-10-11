@@ -30,7 +30,7 @@ public typealias UserInfo = [NSObject : AnyObject]
 */
 public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
     guard lhs.count == rhs.count else {
-        return false;
+        return false
     }
 
     for (key, value) in lhs {
