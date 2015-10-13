@@ -150,6 +150,8 @@ let observer = NotificationObserver(notification: notification, handler: { (noti
 
 There's a suite of unit tests for the `JSQNotificationObserverKit.framework`. To run them, open `JSQNotificationObserverKit.xcodeproj`, select the `JSQNotificationObserverKit` scheme, then &#x2318;-u.
 
+**`JSQNotificationObserverKit` has 100% test coverage**. 
+
 These tests are well commented and serve as further documentation for how to use this library.
 
 ## Contribute
