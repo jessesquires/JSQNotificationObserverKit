@@ -276,15 +276,58 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertTrue(result)
     }
 
-    func test_ThatUserInfoObjectsAreNotEqual() {
+    func test_ThatUserInfoObjectsAreNotEqual_MissingKeys() {
         // GIVEN: two distinct user info objects
         let first: UserInfo = [
             "key0": "fake value",
-            "key1": 234
+            "key1": 234,
+            "key2": NSDate()
         ]
 
         let second: UserInfo = [
             "key0": "fake value"
+        ]
+
+        // WHEN: we compare them
+        let result = (first == second)
+
+        // THEN: they are not equal
+        XCTAssertFalse(result)
+    }
+
+    func test_ThatUserInfoObjectsAreNotEqual_DifferentValues() {
+        // GIVEN: two distinct user info objects
+        let first: UserInfo = [
+            "key0": "fake value",
+            "key1": 234,
+            "key2": NSDate()
+        ]
+
+        let second: UserInfo = [
+            "key0": "different",
+            "key1": 4567,
+            "key2": NSDate()
+        ]
+
+        // WHEN: we compare them
+        let result = (first == second)
+
+        // THEN: they are not equal
+        XCTAssertFalse(result)
+    }
+
+    func test_ThatUserInfoObjectsAreNotEqual_DifferentKeys() {
+        // GIVEN: two distinct user info objects
+        let first: UserInfo = [
+            "key0": "fake value",
+            "key1": 234,
+            "key2": NSDate()
+        ]
+
+        let second: UserInfo = [
+            "key7": "different",
+            "key8": 4567,
+            "key9": NSDate()
         ]
 
         // WHEN: we compare them
