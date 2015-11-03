@@ -6,7 +6,7 @@
 
 ## About
 
-This framework aims to provide better semantics regarding notifications and moves the responsibilty of observing and handling notifications to a lightweight, single-purpose object. It also brings type-safety and a cleaner interface to `NSNotificationCenter`. See objc.io's [snippet #16](http://www.objc.io/snippets/16.html) on *Typed Notification Observers* for more information.
+This library aims to provide better semantics regarding notifications and moves the responsibilty of observing and handling notifications to a lightweight, single-purpose object. It also brings type-safety and a cleaner interface to `NSNotificationCenter`. See objc.io's [snippet #16](http://www.objc.io/snippets/16.html) on *Typed Notification Observers* for more information.
 
 ## Requirements
 
@@ -149,8 +149,6 @@ let observer = NotificationObserver(notification: notification, handler: { (noti
 ## Unit tests
 
 There's a suite of unit tests for the `JSQNotificationObserverKit.framework`. To run them, open `JSQNotificationObserverKit.xcodeproj`, select the `JSQNotificationObserverKit` scheme, then &#x2318;-u.
-
-**`JSQNotificationObserverKit` has 100% test coverage**. 
 
 These tests are well commented and serve as further documentation for how to use this library.
 
