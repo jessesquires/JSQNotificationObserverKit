@@ -50,7 +50,7 @@ public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
 /**
 A typed notification that contains a name and optional sender.
 
-The `Value` type parameter acts as a phantom type, restricting the notification to posting only values of this type.
+- note: The `Value` type parameter acts as a phantom type, restricting the notification to posting only values of this type.
 */
 public struct Notification <Value, Sender: AnyObject> {
 
@@ -96,7 +96,7 @@ public func postNotification<V, S: AnyObject> (notification: Notification<V, S>,
 /**
 An instance of `NotificationObserver` is responsible for observing notifications.
 
-When an observer is initialized, it will immediately begin listening for its specified notification
+- note: When an observer is initialized, it will immediately begin listening for its specified notification
 by registering with the specified notification center.
 */
 public final class NotificationObserver <V, S: AnyObject> {
@@ -130,7 +130,8 @@ public final class NotificationObserver <V, S: AnyObject> {
 
     /**
     Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
-    To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
+    
+    - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
 
     - parameter notification: The notification for which to register the observer.
     - parameter queue:        The operation queue to which `handler` should be added.
@@ -155,7 +156,8 @@ public final class NotificationObserver <V, S: AnyObject> {
 
     /**
     Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
-    To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
+    
+    - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
 
     - parameter notification: The notification for which to register the observer.
     - parameter queue:        The operation queue to which `handler` should be added.
