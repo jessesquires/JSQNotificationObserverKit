@@ -77,21 +77,17 @@ public struct Notification <Value, Sender: AnyObject> {
         self.sender = sender
     }
 
+    /**
+     Posts the notification to the specified center.
+
+     - parameter value:  The data to be sent with the notification.
+     - parameter center: The notification center from which the notification should be dispatched.
+     The default is `NSNotificationCenter.defaultCenter()`.
+     */
+    public func post(value: Value, center: NSNotificationCenter = .defaultCenter()) {
+        center.postNotificationName(self.name, object: self.sender, userInfo: userInfo(value))
+    }
 }
-
-
-/**
-Posts the given notification to the specified center.
-
-- parameter notification: The notification to post.
-- parameter value:        The data to be sent with the notification.
-- parameter center:       The notification center from which the notification should be dispatched.
-The default is `NSNotificationCenter.defaultCenter()`.
-*/
-public func postNotification<V, S: AnyObject> (notification: Notification<V, S>, value: V, center: NSNotificationCenter = .defaultCenter()) {
-    center.postNotificationName(notification.name, object: notification.sender, userInfo: userInfo(value))
-}
-
 
 /**
 An instance of `NotificationObserver` is responsible for observing notifications.
