@@ -10,8 +10,12 @@ This library aims to provide better semantics regarding notifications and moves 
 
 ## Requirements
 
-* iOS 8+
-* Swift 2.0
+* Xcode 7.2+
+* iOS 8.0+
+* OSX 10.10+
+* tvOS 9.1+
+* watchOS 2.0+
+* Swift 2.0+
 
 ## Installation
 
