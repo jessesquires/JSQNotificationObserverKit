@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](https://img.shields.io/cocoapods/v/JSQNotificationObserverKit.svg)][podLink] [![license MIT](https://img.shields.io/cocoapods/l/JSQNotificationObserverKit.svg)][mitLink] [![codecov.io](https://img.shields.io/codecov/c/github/jessesquires/JSQNotificationObserverKit.svg)](http://codecov.io/github/jessesquires/JSQNotificationObserverKit) [![Platform](https://img.shields.io/cocoapods/p/JSQNotificationObserverKit.svg)][docsLink] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-*Generic notifications and observers for iOS, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
+*Generic notifications and observers for Cocoa and CocoaTouch, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
 
 ## About
 
