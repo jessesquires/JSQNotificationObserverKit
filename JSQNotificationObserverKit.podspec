@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'JSQNotificationObserverKit'
-   s.version = '2.0.0'
+   s.version = '3.0.0'
    s.license = 'MIT'
 
    s.summary = 'Generic notifications and observers for Cocoa and CocoaTouch'
