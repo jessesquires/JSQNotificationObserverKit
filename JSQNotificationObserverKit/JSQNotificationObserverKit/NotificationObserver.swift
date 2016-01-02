@@ -23,11 +23,11 @@ public typealias UserInfo = [NSObject : AnyObject]
 
 
 /**
-- parameter lhs: A UserInfo instance.
-- parameter rhs: A UserInfo instance.
+ - parameter lhs: A UserInfo instance.
+ - parameter rhs: A UserInfo instance.
 
-- returns: True if `lhs` is equal to `rhs`, false otherwise.
-*/
+ - returns: True if `lhs` is equal to `rhs`, false otherwise.
+ */
 public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
     guard lhs.count == rhs.count else {
         return false
@@ -42,16 +42,15 @@ public func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
             return false
         }
     }
-
     return true
 }
 
 
 /**
-A typed notification that contains a name and optional sender.
+ A typed notification that contains a name and optional sender.
 
-- note: The `Value` type parameter acts as a phantom type, restricting the notification to posting only values of this type.
-*/
+ - note: The `Value` type parameter acts as a phantom type, restricting the notification to posting only values of this type.
+ */
 public struct Notification <Value, Sender: AnyObject> {
 
     // MARK: Properties
@@ -78,23 +77,24 @@ public struct Notification <Value, Sender: AnyObject> {
     }
 
     /**
-     Posts the notification to the specified center.
+     Posts the notification with the given value to the specified center.
 
      - parameter value:  The data to be sent with the notification.
      - parameter center: The notification center from which the notification should be dispatched.
      The default is `NSNotificationCenter.defaultCenter()`.
      */
     public func post(value: Value, center: NSNotificationCenter = .defaultCenter()) {
-        center.postNotificationName(self.name, object: self.sender, userInfo: userInfo(value))
+        center.postNotificationName(name, object: sender, userInfo: userInfo(value))
     }
 }
 
-/**
-An instance of `NotificationObserver` is responsible for observing notifications.
 
-- note: When an observer is initialized, it will immediately begin listening for its specified notification
-by registering with the specified notification center.
-*/
+/**
+ An instance of `NotificationObserver` is responsible for observing notifications.
+
+ - note: When an observer is initialized, it will immediately begin listening for its specified notification
+ by registering with the specified notification center.
+ */
 public final class NotificationObserver <V, S: AnyObject> {
 
     // MARK: Typealiases
@@ -108,10 +108,10 @@ public final class NotificationObserver <V, S: AnyObject> {
     public typealias ValueSenderHandler = (value: V, sender: S?) -> Void
 
     /**
-    The closure to be called when an `NSNotification` is received.
+     The closure to be called when an `NSNotification` is received.
 
-    - parameter notification: The notification received.
-    */
+     - parameter notification: The notification received.
+     */
     public typealias NotificationHandler = (notification: NSNotification) -> Void
 
 
@@ -126,7 +126,7 @@ public final class NotificationObserver <V, S: AnyObject> {
 
     /**
     Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
-    
+
     - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
 
     - parameter notification: The notification for which to register the observer.
@@ -151,19 +151,19 @@ public final class NotificationObserver <V, S: AnyObject> {
     }
 
     /**
-    Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
-    
-    - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
+     Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
 
-    - parameter notification: The notification for which to register the observer.
-    - parameter queue:        The operation queue to which `handler` should be added.
-    If `nil` (the default), the block is run synchronously on the posting thread.
-    - parameter center:       The notification center from which the notification should be dispatched.
-    The default is `NSNotificationCenter.defaultCenter()`.
-    - parameter handler:      The closure to execute when the notification is received.
+     - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
 
-    - returns: A new `NotificationObserver` instance.
-    */
+     - parameter notification: The notification for which to register the observer.
+     - parameter queue:        The operation queue to which `handler` should be added.
+     If `nil` (the default), the block is run synchronously on the posting thread.
+     - parameter center:       The notification center from which the notification should be dispatched.
+     The default is `NSNotificationCenter.defaultCenter()`.
+     - parameter handler:      The closure to execute when the notification is received.
+
+     - returns: A new `NotificationObserver` instance.
+     */
     public init(
         notification: Notification<V, S>,
         queue: NSOperationQueue? = nil,
