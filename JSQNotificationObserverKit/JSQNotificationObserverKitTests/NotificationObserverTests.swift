@@ -67,7 +67,7 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted with an empty tuple and no sender
-        postNotification(notif, value: ())
+        notif.post(())
 
         // THEN: the observer receives the notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
@@ -95,7 +95,7 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted with userInfo and no sender
-        postNotification(notif, value: userInfo)
+        notif.post(userInfo)
 
         // THEN: the observer receives the notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
@@ -123,7 +123,7 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted with userInfo
-        postNotification(notif, value: userInfo)
+        notif.post(userInfo)
 
         // THEN: the observer receives the notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
@@ -150,7 +150,7 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted
-        postNotification(notification, value: fakeValue)
+        notification.post(fakeValue)
 
         // THEN: the observer receives the notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
@@ -176,7 +176,7 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted without a specific sender
-        postNotification(notification, value: fakeValue)
+        notification.post(fakeValue)
 
         // THEN: the observer receives the notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
@@ -201,7 +201,7 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted without a specific sender
-        postNotification(notification, value: nil)
+        notification.post(nil)
 
         // THEN: the observer receives the notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
@@ -251,7 +251,7 @@ class NotificationObserverTests: XCTestCase {
         observer = nil
         
         // WHEN: the notification is posted after the observer is dealloc'd
-        postNotification(notification, value: fakeValue)
+        notification.post(fakeValue)
         
         // THEN: the observer does not receive the notification and does not execute its handler
         XCTAssertFalse(didCallHandler)
