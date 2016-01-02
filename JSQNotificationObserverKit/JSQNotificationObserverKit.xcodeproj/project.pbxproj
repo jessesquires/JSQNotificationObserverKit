@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8862F5791C37ECC500B44CA3 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8862F57A1C37ECCD00B44CA3 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */; };
+		8862F5881C37EE0000B44CA3 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8862F5891C37EE0D00B44CA3 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D76011ABFBE8200AAE6E7 /* NotificationObserver.swift */; };
 		886C35221B365733004B64EF /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C35211B365733004B64EF /* NotificationObserverTests.swift */; };
 		886C35241B365733004B64EF /* JSQNotificationObserverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */; };
 		887D75EA1ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D75E91ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		8862F5711C37ECA200B44CA3 /* JSQNotificationObserverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationObserverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8862F5751C37ECA200B44CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8862F5801C37EDD400B44CA3 /* JSQNotificationObserverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSQNotificationObserverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8862F5841C37EDD400B44CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886C351F1B365733004B64EF /* JSQNotificationObserverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSQNotificationObserverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		886C35211B365733004B64EF /* NotificationObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
 		886C35231B365733004B64EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +43,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		8862F56D1C37ECA200B44CA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8862F57C1C37EDD400B44CA3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,6 +82,14 @@
 			path = "JSQNotificationObserverKit tvOS";
 			sourceTree = "<group>";
 		};
+		8862F5811C37EDD400B44CA3 /* JSQNotificationObserverKit OSX */ = {
+			isa = PBXGroup;
+			children = (
+				8862F5841C37EDD400B44CA3 /* Info.plist */,
+			);
+			path = "JSQNotificationObserverKit OSX";
+			sourceTree = "<group>";
+		};
 		886C35201B365733004B64EF /* JSQNotificationObserverKitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +105,7 @@
 				887D75E61ABFBD7A00AAE6E7 /* JSQNotificationObserverKit */,
 				886C35201B365733004B64EF /* JSQNotificationObserverKitTests */,
 				8862F5721C37ECA200B44CA3 /* JSQNotificationObserverKit tvOS */,
+				8862F5811C37EDD400B44CA3 /* JSQNotificationObserverKit OSX */,
 				887D75E51ABFBD7A00AAE6E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +116,7 @@
 				887D75E41ABFBD7A00AAE6E7 /* JSQNotificationObserverKit.framework */,
 				886C351F1B365733004B64EF /* JSQNotificationObserverKitTests.xctest */,
 				8862F5711C37ECA200B44CA3 /* JSQNotificationObserverKit.framework */,
+				8862F5801C37EDD400B44CA3 /* JSQNotificationObserverKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +139,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8862F5791C37ECC500B44CA3 /* JSQNotificationObserverKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8862F57D1C37EDD400B44CA3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8862F5881C37EE0000B44CA3 /* JSQNotificationObserverKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +177,24 @@
 			name = "JSQNotificationObserverKit tvOS";
 			productName = "JSQNotificationObserverKit tvOS";
 			productReference = 8862F5711C37ECA200B44CA3 /* JSQNotificationObserverKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8862F57F1C37EDD400B44CA3 /* JSQNotificationObserverKit OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8862F5851C37EDD400B44CA3 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKit OSX" */;
+			buildPhases = (
+				8862F57B1C37EDD400B44CA3 /* Sources */,
+				8862F57C1C37EDD400B44CA3 /* Frameworks */,
+				8862F57D1C37EDD400B44CA3 /* Headers */,
+				8862F57E1C37EDD400B44CA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JSQNotificationObserverKit OSX";
+			productName = "JSQNotificationObserverKit OSX";
+			productReference = 8862F5801C37EDD400B44CA3 /* JSQNotificationObserverKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		886C351E1B365733004B64EF /* JSQNotificationObserverKitTests */ = {
@@ -199,6 +246,9 @@
 					8862F5701C37ECA200B44CA3 = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					8862F57F1C37EDD400B44CA3 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					886C351E1B365733004B64EF = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -221,6 +271,7 @@
 			targets = (
 				887D75E31ABFBD7A00AAE6E7 /* JSQNotificationObserverKit iOS */,
 				886C351E1B365733004B64EF /* JSQNotificationObserverKitTests */,
+				8862F57F1C37EDD400B44CA3 /* JSQNotificationObserverKit OSX */,
 				8862F5701C37ECA200B44CA3 /* JSQNotificationObserverKit tvOS */,
 			);
 		};
@@ -228,6 +279,13 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		8862F56F1C37ECA200B44CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8862F57E1C37EDD400B44CA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,6 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8862F57A1C37ECCD00B44CA3 /* NotificationObserver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8862F57B1C37EDD400B44CA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8862F5891C37EE0D00B44CA3 /* NotificationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +363,7 @@
 				INFOPLIST_FILE = "JSQNotificationObserverKit tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.JSQNotificationObserverKit-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.JSQNotificationObserverKit;
 				PRODUCT_NAME = JSQNotificationObserverKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -316,12 +382,55 @@
 				INFOPLIST_FILE = "JSQNotificationObserverKit tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.JSQNotificationObserverKit-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.JSQNotificationObserverKit;
 				PRODUCT_NAME = JSQNotificationObserverKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		8862F5861C37EDD400B44CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "JSQNotificationObserverKit OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.JSQNotificationObserverKit;
+				PRODUCT_NAME = JSQNotificationObserverKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8862F5871C37EDD400B44CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "JSQNotificationObserverKit OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexedbits.JSQNotificationObserverKit;
+				PRODUCT_NAME = JSQNotificationObserverKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -481,6 +590,14 @@
 			buildConfigurations = (
 				8862F5771C37ECA200B44CA3 /* Debug */,
 				8862F5781C37ECA200B44CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8862F5851C37EDD400B44CA3 /* Build configuration list for PBXNativeTarget "JSQNotificationObserverKit OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8862F5861C37EDD400B44CA3 /* Debug */,
+				8862F5871C37EDD400B44CA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
