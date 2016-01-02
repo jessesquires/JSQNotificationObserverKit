@@ -74,7 +74,7 @@ observer = NotificationObserver(notification: notification) { (value, sender) in
 }
 
 // Post the notification with the updated CGSize value
-postNotification(notification, value: CGSizeMake(200, 200))
+notification.post(CGSizeMake(200, 200))
 
 // Unregister observer, stop listening for notifications
 observer = nil
@@ -89,7 +89,7 @@ Not all notifications are associated with a specific sender object. Here's how t
 let notification = Notification<String, AnyObject>(name: "StringNotif")
 
 // Post the notification
-postNotification(notification, value: "new string")
+notification.post("new string")
 
 // Register observer, this handles notifications from *any* sender
 var observer: NotificationObserver<String, AnyObject>?
@@ -117,7 +117,7 @@ let observer = NotificationObserver(notification: n, queue: q, center: c) { (val
     // handle notification
 }
 
-postNotification(n, value: v, center: c)
+notification.post(v, center: c)
 ````
 
 #### Notifications without a value
@@ -133,7 +133,7 @@ let observer = NotificationObserver(notification: notification) { (value, sender
 }
 
 // notification value is `Any?`, so pass nil
-postNotification(notification, value: nil)
+notification.post(nil)
 ````
 
 #### Working with "traditional" Cocoa notifications
