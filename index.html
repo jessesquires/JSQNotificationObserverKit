@@ -40,9 +40,6 @@
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF26JSQNotificationObserverKitoi2eeFTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__GS0_S1_PS2____Sb">==(_:_:)</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:F26JSQNotificationObserverKit16postNotificationu0_Rq0_Ss9AnyObject_FTGVS_12Notificationq_q0__5valueq_6centerCSo20NSNotificationCenter_T_">postNotification(_:value:center:)</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -71,15 +68,19 @@
 
 <p><a href="http://travis-ci.org/jessesquires/JSQNotificationObserverKit"><img src="https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg" alt="Build Status"></a> <a href="https://cocoapods.org/pods/JSQNotificationObserverKit"><img src="https://img.shields.io/cocoapods/v/JSQNotificationObserverKit.svg" alt="Version Status"></a> <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/cocoapods/l/JSQNotificationObserverKit.svg" alt="license MIT"></a> <a href="http://codecov.io/github/jessesquires/JSQNotificationObserverKit"><img src="https://img.shields.io/codecov/c/github/jessesquires/JSQNotificationObserverKit.svg" alt="codecov.io"></a> <a href="http://www.jessesquires.com/JSQNotificationObserverKit"><img src="https://img.shields.io/cocoapods/p/JSQNotificationObserverKit.svg" alt="Platform"></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
 
-<p><em>Generic notifications and observers for iOS, inspired by <a href="http://www.objc.io/snippets/16.html">objc.io</a></em></p>
+<p><em>Generic notifications and observers for Cocoa and CocoaTouch, inspired by <a href="http://www.objc.io/snippets/16.html">objc.io</a></em></p>
 <a href='#about' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='about'>About</h2>
 
 <p>This library aims to provide better semantics regarding notifications and moves the responsibilty of observing and handling notifications to a lightweight, single-purpose object. It also brings type-safety and a cleaner interface to <code>NSNotificationCenter</code>. See objc.io&rsquo;s <a href="http://www.objc.io/snippets/16.html">snippet #16</a> on <em>Typed Notification Observers</em> for more information.</p>
 <a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
 
 <ul>
-<li>iOS 8+</li>
-<li>Swift 2.0</li>
+<li>Xcode 7.2+</li>
+<li>iOS 8.0+</li>
+<li>OSX 10.10+</li>
+<li>tvOS 9.1+</li>
+<li>watchOS 2.0+</li>
+<li>Swift 2.0+</li>
 </ul>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
 <a href='#a_href_http_cocoapods_org_cocoapods_a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a_href_http_cocoapods_org_cocoapods_a'><a href="http://cocoapods.org">CocoaPods</a></h4>
@@ -126,7 +127,7 @@
 <span class="p">}</span>
 
 <span class="c1">// Post the notification with the updated CGSize value</span>
-<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CGSizeMake</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">notification</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="kt">CGSizeMake</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 
 <span class="c1">// Unregister observer, stop listening for notifications</span>
 <span class="n">observer</span> <span class="o">=</span> <span class="kc">nil</span>
@@ -138,7 +139,7 @@
 <span class="k">let</span> <span class="nv">notification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"StringNotif"</span><span class="p">)</span>
 
 <span class="c1">// Post the notification</span>
-<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"new string"</span><span class="p">)</span>
+<span class="n">notification</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="s">"new string"</span><span class="p">)</span>
 
 <span class="c1">// Register observer, this handles notifications from *any* sender</span>
 <span class="k">var</span> <span class="nv">observer</span><span class="p">:</span> <span class="kt">NotificationObserver</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">?</span>
@@ -163,7 +164,7 @@
     <span class="c1">// handle notification</span>
 <span class="p">}</span>
 
-<span class="nf">postNotification</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">v</span><span class="p">,</span> <span class="nv">center</span><span class="p">:</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">notification</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nv">center</span><span class="p">:</span> <span class="n">c</span><span class="p">)</span>
 </code></pre>
 <a href='#notifications_without_a_value' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='notifications_without_a_value'>Notifications without a value</h4>
 
@@ -176,7 +177,7 @@
 <span class="p">}</span>
 
 <span class="c1">// notification value is `Any?`, so pass nil</span>
-<span class="nf">postNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">notification</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
 </code></pre>
 <a href='#working_with_q_traditional_q_cocoa_notifications' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='working_with_q_traditional_q_cocoa_notifications'>Working with <q>traditional</q> Cocoa notifications</h4>
 
@@ -213,8 +214,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-11-14)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2016-01-02)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
