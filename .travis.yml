@@ -5,7 +5,7 @@ env:
    global:
    - LANG=en_US.UTF-8
    - PROJECT="JSQNotificationObserverKit/JSQNotificationObserverKit.xcodeproj"
-   - IOS_SCHEME="JSQNotificationObserverKit"
+   - IOS_SCHEME="JSQNotificationObserverKit-iOS"
    - OSX_SCHEME="JSQNotificationObserverKit-OSX"
    - TVOS_SCHEME="JSQNotificationObserverKit-tvOS"
    - WATCHOS_SCHEME="JSQNotificationObserverKit-watchOS"

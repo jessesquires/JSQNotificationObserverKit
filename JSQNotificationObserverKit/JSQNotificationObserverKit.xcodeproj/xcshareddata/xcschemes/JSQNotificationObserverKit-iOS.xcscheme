@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
-               BuildableName = "JSQNotificationObserverKit.framework"
-               BlueprintName = "JSQNotificationObserverKit"
+               BuildableName = "JSQNotificationObserverKit-iOS.framework"
+               BlueprintName = "JSQNotificationObserverKit-iOS"
                ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
-            BuildableName = "JSQNotificationObserverKit.framework"
-            BlueprintName = "JSQNotificationObserverKit"
+            BuildableName = "JSQNotificationObserverKit-iOS.framework"
+            BlueprintName = "JSQNotificationObserverKit-iOS"
             ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
-            BuildableName = "JSQNotificationObserverKit.framework"
-            BlueprintName = "JSQNotificationObserverKit"
+            BuildableName = "JSQNotificationObserverKit-iOS.framework"
+            BlueprintName = "JSQNotificationObserverKit-iOS"
             ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "887D75E31ABFBD7A00AAE6E7"
-            BuildableName = "JSQNotificationObserverKit.framework"
-            BlueprintName = "JSQNotificationObserverKit"
+            BuildableName = "JSQNotificationObserverKit-iOS.framework"
+            BlueprintName = "JSQNotificationObserverKit-iOS"
             ReferencedContainer = "container:JSQNotificationObserverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
