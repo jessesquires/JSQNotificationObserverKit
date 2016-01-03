@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](https://img.shields.io/cocoapods/v/JSQNotificationObserverKit.svg)][podLink] [![license MIT](https://img.shields.io/cocoapods/l/JSQNotificationObserverKit.svg)][mitLink] [![codecov.io](https://img.shields.io/codecov/c/github/jessesquires/JSQNotificationObserverKit.svg)](http://codecov.io/github/jessesquires/JSQNotificationObserverKit) [![Platform](https://img.shields.io/cocoapods/p/JSQNotificationObserverKit.svg)][docsLink] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-*Generic notifications and observers for iOS, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
+*Generic notifications and observers for Cocoa and CocoaTouch, inspired by [objc.io](http://www.objc.io/snippets/16.html)*
 
 ## About
 
@@ -10,8 +10,12 @@ This library aims to provide better semantics regarding notifications and moves 
 
 ## Requirements
 
-* iOS 8+
-* Swift 2.0
+* Xcode 7.2+
+* iOS 8.0+
+* OSX 10.10+
+* tvOS 9.1+
+* watchOS 2.0+
+* Swift 2.0+
 
 ## Installation
 
@@ -70,7 +74,7 @@ observer = NotificationObserver(notification: notification) { (value, sender) in
 }
 
 // Post the notification with the updated CGSize value
-postNotification(notification, value: CGSizeMake(200, 200))
+notification.post(CGSizeMake(200, 200))
 
 // Unregister observer, stop listening for notifications
 observer = nil
@@ -85,7 +89,7 @@ Not all notifications are associated with a specific sender object. Here's how t
 let notification = Notification<String, AnyObject>(name: "StringNotif")
 
 // Post the notification
-postNotification(notification, value: "new string")
+notification.post("new string")
 
 // Register observer, this handles notifications from *any* sender
 var observer: NotificationObserver<String, AnyObject>?
@@ -113,7 +117,7 @@ let observer = NotificationObserver(notification: n, queue: q, center: c) { (val
     // handle notification
 }
 
-postNotification(n, value: v, center: c)
+notification.post(v, center: c)
 ````
 
 #### Notifications without a value
@@ -129,7 +133,7 @@ let observer = NotificationObserver(notification: notification) { (value, sender
 }
 
 // notification value is `Any?`, so pass nil
-postNotification(notification, value: nil)
+notification.post(nil)
 ````
 
 #### Working with "traditional" Cocoa notifications

@@ -12,7 +12,7 @@
 //
 //
 //  License
-//  Copyright (c) 2015 Jesse Squires
+//  Copyright © 2015-present Jesse Squires
 //  Released under an MIT license: http://opensource.org/licenses/MIT
 //
 
@@ -49,10 +49,9 @@ func ==(lhs: TestValue, rhs: TestValue) -> Bool {
 let timeout = NSTimeInterval(3)
 
 
-class NotificationObserverTests: XCTestCase {
+final class NotificationObserverTests: XCTestCase {
 
     func test_ThatNotificationIsPostedAndReceived_WithEmptyTupleAndNoSender() {
-
         // GIVEN: a notification
         let notif = Notification<Void, AnyObject>(name: "Notification")
 
@@ -76,7 +75,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatNotificationIsPostedAndReceived_WithUserInfoAndSender() {
-
         // GIVEN: a userInfo dictionary
         let userInfo = ["someKey": 100, "anotherKey": NSDate()]
 
@@ -90,7 +88,7 @@ class NotificationObserverTests: XCTestCase {
             XCTAssertEqual(value, userInfo, "Value should equal expected value")
             XCTAssertEqual(sender!, self, "Sender should equal expected sender")
             expect.fulfill()
-        })
+            })
 
         XCTAssertNotNil(observer)
 
@@ -104,7 +102,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatNotificationIsPostedAndReceived_WithUserInfoAndNoSender() {
-
         // GIVEN: a userInfo dictionary
         let userInfo = ["someKey": 100, "anotherKey": NSDate()]
 
@@ -132,7 +129,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatNotificationIsPostedAndReceived_WithValueAndSender() {
-
         // GIVEN: a sender, value, and notification
         let fakeSender = TestSender()
         let fakeValue = TestValue()
@@ -159,7 +155,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatNotificationIsPostedAndReceived_WithValueAndNoSender() {
-
         // GIVEN: a value, and notification without a sender
         let fakeValue = TestValue()
         let notification = Notification<TestValue, AnyObject>(name: "NotificationName")
@@ -185,7 +180,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatNotificationIsPostedAndReceived_WithNilValueAndNoSender() {
-
         // GIVEN: a notification with a sender
         let notification = Notification<Any?, AnyObject>(name: "NotificationName")
 
@@ -210,7 +204,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatNotificationIsPostedAndReceived_TraditionalCocoa() {
-
         // GIVEN: a "traditional Cocoa" notification
         let notification = Notification<Any, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
 
@@ -236,7 +229,6 @@ class NotificationObserverTests: XCTestCase {
     }
 
     func test_ThatObserverUnregistersForNotificationsOnDeinit() {
-
         // GIVEN: a notification and observer
         let fakeValue = TestValue()
         let notification = Notification<TestValue, TestSender>(name: "NotificationName", sender: TestSender())
@@ -249,10 +241,10 @@ class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         observer = nil
-        
+
         // WHEN: the notification is posted after the observer is dealloc'd
         notification.post(fakeValue)
-        
+
         // THEN: the observer does not receive the notification and does not execute its handler
         XCTAssertFalse(didCallHandler)
     }
@@ -323,16 +315,16 @@ class NotificationObserverTests: XCTestCase {
             "key1": 234,
             "key2": NSDate()
         ]
-
+        
         let second: UserInfo = [
             "key7": "different",
             "key8": 4567,
             "key9": NSDate()
         ]
-
+        
         // WHEN: we compare them
         let result = (first == second)
-
+        
         // THEN: they are not equal
         XCTAssertFalse(result)
     }
