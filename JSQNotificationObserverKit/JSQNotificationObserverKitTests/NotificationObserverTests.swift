@@ -46,10 +46,54 @@ func ==(lhs: TestValue, rhs: TestValue) -> Bool {
 
 // MARK: Test cases
 
-let timeout = NSTimeInterval(3)
+let timeout = NSTimeInterval(5)
 
 
 final class NotificationObserverTests: XCTestCase {
+
+    func test_ThatWithSender_UpdatesNotification() {
+        // GIVEN: a notification and sender
+        let sender = TestSender()
+        var notif = Notification<Int, TestSender>(name: "Notif", sender: sender)
+        XCTAssertEqual(notif.sender, sender)
+
+        notif.withSender(nil)
+        XCTAssertNil(notif.sender)
+
+        let anotherSender = TestSender()
+        notif.withSender(anotherSender)
+        XCTAssertEqual(notif.sender, anotherSender)
+        XCTAssertNotEqual(notif.sender, sender)
+    }
+
+    func test_ThatWithSender_PostsCorrectNotification() {
+        // GIVEN: a notification
+        var notif = Notification<Int, TestSender>(name: "Notif")
+        XCTAssertNil(notif.sender)
+
+        let sender = TestSender()
+        let value = 666
+        let expect = self.expectationWithDescription("\(__FUNCTION__)")
+
+        // GIVEN: an observer
+        let observer = NotificationObserver(notification: notif, handler: { (v, s) in
+            XCTAssertEqual(s, sender)
+            XCTAssertEqual(v, value)
+            expect.fulfill()
+        })
+
+        XCTAssertNotNil(observer)
+
+        // WHEN: the notification is posted using a new sender
+        notif.withSender(sender).post(value)
+
+        XCTAssertEqual(notif.sender, sender)
+
+        // THEN: the observer receives the correct notification and executes its handler
+        self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
+            XCTAssertNil(error, "Expectation should not error")
+        })
+    }
 
     func test_ThatNotificationIsPostedAndReceived_WithEmptyTupleAndNoSender() {
         // GIVEN: a notification
@@ -76,16 +120,16 @@ final class NotificationObserverTests: XCTestCase {
 
     func test_ThatNotificationIsPostedAndReceived_WithUserInfoAndSender() {
         // GIVEN: a userInfo dictionary
-        let userInfo = ["someKey": 100, "anotherKey": NSDate()]
+        let userInfo: UserInfo = ["someKey": 100, "anotherKey": NSDate()]
 
         // GIVEN: a notification
-        let notif = Notification<[String: NSObject], NotificationObserverTests>(name: "ExampleNotification", sender: self)
+        let notif = Notification<UserInfo, NotificationObserverTests>(name: "ExampleNotification", sender: self)
 
         let expect = self.expectationWithDescription("\(__FUNCTION__)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notif, handler: { [weak self] (value, sender) in
-            XCTAssertEqual(value, userInfo, "Value should equal expected value")
+            XCTAssertTrue(value == userInfo, "Value should equal expected value")
             XCTAssertEqual(sender!, self, "Sender should equal expected sender")
             expect.fulfill()
             })
