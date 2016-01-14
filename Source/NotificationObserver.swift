@@ -59,7 +59,7 @@ public struct Notification <Value, Sender: AnyObject> {
     public let name: String
 
     /// The object that posted the notification.
-    public let sender: Sender?
+    public private(set) var sender: Sender?
 
     // MARK: Initialization
 
@@ -85,6 +85,18 @@ public struct Notification <Value, Sender: AnyObject> {
      */
     public func post(value: Value, center: NSNotificationCenter = .defaultCenter()) {
         center.postNotificationName(name, object: sender, userInfo: userInfo(value))
+    }
+
+    /**
+     Updates the notification with the specified sender.
+
+     - parameter sender: The instance posting this notification.
+
+     - returns: The receiver with the updated sender.
+     */
+    public mutating func withSender(sender: Sender?) -> Notification {
+        self.sender = sender
+        return self
     }
 }
 

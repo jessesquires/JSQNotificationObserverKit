@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'JSQNotificationObserverKit'
-   s.version = '3.0.0'
+   s.version = '3.1.0'
    s.license = 'MIT'
 
    s.summary = 'Generic notifications and observers for Cocoa and CocoaTouch'
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
    s.authors = { 'Jesse Squires' => 'jesse.squires.developer@gmail.com' }
 
    s.source = { :git => 'https://github.com/jessesquires/JSQNotificationObserverKit.git', :tag => s.version }
-   s.source_files = 'JSQNotificationObserverKit/JSQNotificationObserverKit/*.swift'
+   s.source_files = 'Source/*.swift'
 
    s.ios.deployment_target = '8.0'
    s.osx.deployment_target = '10.10'
