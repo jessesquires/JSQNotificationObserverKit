@@ -39,7 +39,7 @@ github "jessesquires/JSQNotificationObserverKit"
 
 ## Documentation
 
-Read the fucking [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
+Read the [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
 
 More information on the [gh-pages](https://github.com/jessesquires/JSQNotificationObserverKit/tree/gh-pages) branch.
 
