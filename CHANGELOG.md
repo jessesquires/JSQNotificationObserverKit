@@ -4,14 +4,23 @@ The changelog for `JSQNotificationObserverKit`. Also see the [releases](https://
 
 --------------------------------------
 
+4.0.0
+-----
+
+This release closes the [4.0.0 milestone](https://github.com/jessesquires/JSQNotificationObserverKit/issues?q=milestone%3A4.0.0). :tada:
+
+* The previously added `withSender()` function on `Notification` has changed from `mutating` to non-mutating and now returns a new `Notification` instance. See discussion at #26. See the [docs](http://www.jessesquires.com/JSQNotificationObserverKit/Structs/Notification.html#/s:FV26JSQNotificationObserverKit12Notification10withSenderu0_Rq0_Ss9AnyObject_FGS0_q_q0__FGSqq0__GS0_q_q0__) for details.
+
+This is a minor, but breaking, change.
+
 3.1.0
 -----
 
-This release closes the [3.1.0 milestone](https://github.com/jessesquires/JSQNotificationObserverKit/issues?q=milestone%3A3.1.0). :tada: 
+This release closes the [3.1.0 milestone](https://github.com/jessesquires/JSQNotificationObserverKit/issues?q=milestone%3A3.1.0). :tada:
 
 ### New
 
-* Support for [Swift package manager](https://github.com/apple/swift-package-manager) :package:  
+* Support for [Swift package manager](https://github.com/apple/swift-package-manager) :package:
 
 * `Notification` now has a `withSender()` function to add/remove a sender. (#22, Thanks @grosch! :clap:)
 
@@ -32,13 +41,13 @@ See the [docs](http://www.jessesquires.com/JSQNotificationObserverKit/Structs/No
 
 This release closes the [3.0.0 milestone](https://github.com/jessesquires/JSQNotificationObserverKit/issues?q=milestone%3A3.0.0).
 
-### New 
+### New
 
-Official support for OS X, tvOS, watchOS via CocoaPods. :tada: 
+Official support for OS X, tvOS, watchOS via CocoaPods. :tada:
 
 ### Changes
 
-The `postNotification()` global function has moved to be a function on `Notification`. Thanks @grosch! 
+The `postNotification()` global function has moved to be a function on `Notification`. Thanks @grosch!
 See the [updated docs](http://www.jessesquires.com/JSQNotificationObserverKit/Structs/Notification.html) for details.
 
 2.0.0
@@ -46,7 +55,7 @@ See the [updated docs](http://www.jessesquires.com/JSQNotificationObserverKit/St
 
 This release closes the [2.0.0 milestone](https://github.com/jessesquires/JSQNotificationObserverKit/issues?q=milestone%3A2.0.0).
 
-- Swift 2.0 :tada: 
+- Swift 2.0 :tada:
 - A few refinements
 - More unit tests
 - Updated [docs](http://www.jessesquires.com/JSQNotificationObserverKit)
@@ -54,6 +63,6 @@ This release closes the [2.0.0 milestone](https://github.com/jessesquires/JSQNot
 1.0.0
 -----
 
-It's here! :tada: 
+It's here! :tada:
 
 Checkout the `README` and documentation.
