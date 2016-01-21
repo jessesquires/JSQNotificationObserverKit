@@ -51,24 +51,29 @@ let timeout = NSTimeInterval(5)
 
 final class NotificationObserverTests: XCTestCase {
 
-    func test_ThatWithSender_UpdatesNotification() {
+    func test_ThatWithSender_ReturnsNewNotification() {
         // GIVEN: a notification and sender
         let sender = TestSender()
-        var notif = Notification<Int, TestSender>(name: "Notif", sender: sender)
+        let notif = Notification<Int, TestSender>(name: "Notif", sender: sender)
         XCTAssertEqual(notif.sender, sender)
 
-        notif.withSender(nil)
-        XCTAssertNil(notif.sender)
+        let newNotif = notif.withSender(nil)
+        XCTAssertEqual(newNotif.name, notif.name, "Notification names should be equal")
+        XCTAssertNil(newNotif.sender, "New notification sender should be updated")
+
+        XCTAssertNotNil(notif.sender, "Original notification sender should remain unchanged")
 
         let anotherSender = TestSender()
-        notif.withSender(anotherSender)
-        XCTAssertEqual(notif.sender, anotherSender)
-        XCTAssertNotEqual(notif.sender, sender)
+        let anotherNotif = notif.withSender(anotherSender)
+        XCTAssertEqual(anotherNotif.name, notif.name, "Notification names should be equal")
+        XCTAssertEqual(anotherNotif.sender, anotherSender, "New notification sender should be updated")
+
+        XCTAssertEqual(notif.sender, sender, "Original notification sender should remain unchanged")
     }
 
     func test_ThatWithSender_PostsCorrectNotification() {
         // GIVEN: a notification
-        var notif = Notification<Int, TestSender>(name: "Notif")
+        let notif = Notification<Int, TestSender>(name: "Notif")
         XCTAssertNil(notif.sender)
 
         let sender = TestSender()
@@ -85,9 +90,11 @@ final class NotificationObserverTests: XCTestCase {
         XCTAssertNotNil(observer)
 
         // WHEN: the notification is posted using a new sender
-        notif.withSender(sender).post(value)
+        let newNotif = notif.withSender(sender)
+        newNotif.post(value)
 
-        XCTAssertEqual(notif.sender, sender)
+        XCTAssertEqual(newNotif.sender, sender, "New notification sender should be updated")
+        XCTAssertNil(notif.sender, "Original notification sender should remain unchanged")
 
         // THEN: the observer receives the correct notification and executes its handler
         self.waitForExpectationsWithTimeout(timeout, handler: { (error) in
