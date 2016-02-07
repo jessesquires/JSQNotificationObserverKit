@@ -59,7 +59,7 @@ public struct Notification <Value, Sender: AnyObject> {
     public let name: String
 
     /// The object that posted the notification.
-    public private(set) var sender: Sender?
+    public let sender: Sender?
 
     // MARK: Initialization
 
@@ -88,15 +88,16 @@ public struct Notification <Value, Sender: AnyObject> {
     }
 
     /**
-     Updates the notification with the specified sender.
+     Returns a new notification with the receiver's name and the specified sender.
+
+     - warning: Note that this function returns a new `Notification` instance.
 
      - parameter sender: The instance posting this notification.
 
-     - returns: The receiver with the updated sender.
+     - returns: A new `Notification` instance.
      */
-    public mutating func withSender(sender: Sender?) -> Notification {
-        self.sender = sender
-        return self
+    public func withSender(sender: Sender?) -> Notification {
+        return Notification(name: name, sender: sender)
     }
 }
 

@@ -19,7 +19,7 @@ This library aims to provide better semantics regarding notifications and moves 
 
 ## Installation
 
-#### [CocoaPods](http://cocoapods.org)
+#### [CocoaPods](http://cocoapods.org) (recommended)
 
 ````ruby
 use_frameworks!
@@ -37,15 +37,9 @@ pod 'JSQNotificationObserverKit', :git => 'https://github.com/jessesquires/JSQNo
 github "jessesquires/JSQNotificationObserverKit"
 ````
 
-#### Manually
-
-Add the `NotificationObserver.swift` file to your project.
-
 ## Documentation
 
-Read the fucking [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
-
-More information on the [gh-pages](https://github.com/jessesquires/JSQNotificationObserverKit/tree/gh-pages) branch.
+Read the [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com). More information on the [`gh-pages`](https://github.com/jessesquires/JSQNotificationObserverKit/tree/gh-pages) branch.
 
 ## Getting Started
 
