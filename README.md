@@ -10,12 +10,12 @@ This library aims to provide better semantics regarding notifications and moves 
 
 ## Requirements
 
-* Xcode 7.2+
+* Xcode 7.3+
 * iOS 8.0+
 * OSX 10.10+
 * tvOS 9.1+
 * watchOS 2.0+
-* Swift 2.0+
+* Swift 2.2+
 
 ## Installation
 
@@ -135,9 +135,9 @@ notification.post(nil)
 The library can also handle "traditional" notifications that are posted by the OS. Instead of using the `(value, sender)` handler, use the `(notification)` handler which passes the full `NSNotification` object.
 
 ````swift
-let notification = Notification<Any, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
+let notification = CocoaNotification(name: UIApplicationDidReceiveMemoryWarningNotification)
 
-let observer = NotificationObserver(notification: notification, handler: { (notification: NSNotification) in
+let observer = CocoaObserver(notification: notification, handler: { (notification: NSNotification) in
     // handle the notification
 })
 
