@@ -81,7 +81,7 @@ final class NotificationObserverTests: XCTestCase {
         let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif, handler: { (v, s) in
+        let observer = NotificationObserver(notif, handler: { (v, s) in
             XCTAssertEqual(s, sender)
             XCTAssertEqual(v, value)
             expect.fulfill()
@@ -109,7 +109,7 @@ final class NotificationObserverTests: XCTestCase {
         let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif, handler: { (value, sender) in
+        let observer = NotificationObserver(notif, handler: { (value, sender) in
             XCTAssertNil(sender, "Sender should be nil")
             expect.fulfill()
         })
@@ -135,7 +135,7 @@ final class NotificationObserverTests: XCTestCase {
         let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif, handler: { [weak self] (value, sender) in
+        let observer = NotificationObserver(notif, handler: { [weak self] (value, sender) in
             XCTAssertTrue(value == userInfo, "Value should equal expected value")
             XCTAssertEqual(sender!, self, "Sender should equal expected sender")
             expect.fulfill()
@@ -162,7 +162,7 @@ final class NotificationObserverTests: XCTestCase {
         let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notif, queue: .mainQueue(), center: .defaultCenter(), handler: { (value, sender) in
+        let observer = NotificationObserver(notif, queue: .mainQueue(), center: .defaultCenter(), handler: { (value, sender) in
             XCTAssertEqual(value, userInfo, "Value should equal expected value")
             XCTAssertNil(sender, "Sender should be nil")
             expect.fulfill()
@@ -188,7 +188,7 @@ final class NotificationObserverTests: XCTestCase {
         let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
+        let observer = NotificationObserver(notification, handler: { (value, sender) in
             XCTAssertEqual(value, fakeValue, "Values should be equal")
             XCTAssertEqual(sender, fakeSender, "Senders should be equal")
             expectation.fulfill()
@@ -213,7 +213,7 @@ final class NotificationObserverTests: XCTestCase {
         let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
+        let observer = NotificationObserver(notification, handler: { (value, sender) in
             XCTAssertEqual(value.value, fakeValue.value, "Values should be equal")
             XCTAssertNil(sender, "Sender should be nil")
             expectation.fulfill()
@@ -237,7 +237,7 @@ final class NotificationObserverTests: XCTestCase {
         let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
-        let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
+        let observer = NotificationObserver(notification, handler: { (value, sender) in
             XCTAssertNil(value, "Value should be nil")
             XCTAssertNil(sender, "Sender should be nil")
             expectation.fulfill()
@@ -261,7 +261,7 @@ final class NotificationObserverTests: XCTestCase {
         let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an "traditional Cocoa" observer
-        let observer = CocoaObserver(notification: notification, handler: { (notification: NSNotification) in
+        let observer = CocoaObserver(notification, handler: { (notification: NSNotification) in
             expectation.fulfill()
         })
 
@@ -285,7 +285,7 @@ final class NotificationObserverTests: XCTestCase {
         let notification = Notification<TestValue, TestSender>(name: "NotificationName", sender: TestSender())
 
         var didCallHandler = false
-        var observer: NotificationObserver? = NotificationObserver(notification: notification, handler: { (value, sender) in
+        var observer: NotificationObserver? = NotificationObserver(notification, handler: { (value, sender) in
             didCallHandler = true
         })
 

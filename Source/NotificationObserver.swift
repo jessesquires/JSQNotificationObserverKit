@@ -74,13 +74,13 @@ public struct Notification <Value, Sender: AnyObject> {
     // MARK: Initialization
 
     /**
-    Constructs a new notification instance having the specified name and sender.
+     Constructs a new notification instance having the specified name and sender.
 
-    - parameter name:   The name of the notification.
-    - parameter sender: The object sending the notification. The default is `nil`.
+     - parameter name:   The name of the notification.
+     - parameter sender: The object sending the notification. The default is `nil`.
 
-    - returns: A new `Notification` instance.
-    */
+     - returns: A new `Notification` instance.
+     */
     public init(name: String, sender: Sender? = nil) {
         self.name = name
         self.sender = sender
@@ -123,11 +123,11 @@ public final class NotificationObserver <V, S: AnyObject> {
     // MARK: Typealiases
 
     /**
-    The closure to be called when a `Notification` is received.
+     The closure to be called when a `Notification` is received.
 
-    - parameter value:  The data sent with the notification.
-    - parameter sender: The object that sent the notification, or `nil` if the notification is not associated with a specific sender.
-    */
+     - parameter value:  The data sent with the notification.
+     - parameter sender: The object that sent the notification, or `nil` if the notification is not associated with a specific sender.
+     */
     public typealias ValueSenderHandler = (value: V, sender: S?) -> Void
 
     /**
@@ -141,36 +141,32 @@ public final class NotificationObserver <V, S: AnyObject> {
     // MARK: Properties
 
     private let observerProxy: NSObjectProtocol
-
     private let center: NSNotificationCenter
 
 
     // MARK: Initialization
 
     /**
-    Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
+     Constructs a new `NotificationObserver` instance and immediately registers to begin observing the specified `notification`.
 
-    - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
+     - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
 
-    - parameter notification: The notification for which to register the observer.
-    - parameter queue:        The operation queue to which `handler` should be added.
-    If `nil` (the default), the block is run synchronously on the posting thread.
-    - parameter center:       The notification center from which the notification should be dispatched.
-    The default is `NSNotificationCenter.defaultCenter()`.
-    - parameter handler:      The closure to execute when the notification is received.
+     - parameter notification: The notification for which to register the observer.
+     - parameter queue:        The operation queue to which `handler` should be added. If `nil` (the default), the block is run synchronously on the posting thread.
+     - parameter center:       The notification center from which the notification should be dispatched. The default is `NSNotificationCenter.defaultCenter()`.
+     - parameter handler:      The closure to execute when the notification is received.
 
-    - returns: A new `NotificationObserver` instance.
-    */
-    public convenience init(
-        notification: Notification<V, S>,
-        queue: NSOperationQueue? = nil,
-        center: NSNotificationCenter = .defaultCenter(),
-        handler: ValueSenderHandler) {
-            self.init(notification: notification, queue: queue, center: center, handler: { (notification: NSNotification) in
-                if let value: V = unboxUserInfo(notification.userInfo) {
-                    handler(value: value, sender: notification.object as? S)
-                }
-            })
+     - returns: A new `NotificationObserver` instance.
+     */
+    public convenience init(_ notification: Notification<V, S>,
+                              queue: NSOperationQueue? = nil,
+                              center: NSNotificationCenter = .defaultCenter(),
+                              handler: ValueSenderHandler) {
+        self.init(notification, queue: queue, center: center, handler: { (notification: NSNotification) in
+            if let value: V = unboxUserInfo(notification.userInfo) {
+                handler(value: value, sender: notification.object as? S)
+            }
+        })
     }
 
     /**
@@ -179,21 +175,18 @@ public final class NotificationObserver <V, S: AnyObject> {
      - warning: To unregister this observer and end listening for notifications, dealloc the object by setting it to `nil`.
 
      - parameter notification: The notification for which to register the observer.
-     - parameter queue:        The operation queue to which `handler` should be added.
-     If `nil` (the default), the block is run synchronously on the posting thread.
-     - parameter center:       The notification center from which the notification should be dispatched.
-     The default is `NSNotificationCenter.defaultCenter()`.
+     - parameter queue:        The operation queue to which `handler` should be added. If `nil` (the default), the block is run synchronously on the posting thread.
+     - parameter center:       The notification center from which the notification should be dispatched. The default is `NSNotificationCenter.defaultCenter()`.
      - parameter handler:      The closure to execute when the notification is received.
 
      - returns: A new `NotificationObserver` instance.
      */
-    public init(
-        notification: Notification<V, S>,
-        queue: NSOperationQueue? = nil,
-        center: NSNotificationCenter = .defaultCenter(),
-        handler: NotificationHandler) {
-            self.center = center
-            observerProxy = center.addObserverForName(notification.name, object: notification.sender, queue: queue, usingBlock: handler)
+    public init(_ notification: Notification<V, S>,
+                  queue: NSOperationQueue? = nil,
+                  center: NSNotificationCenter = .defaultCenter(),
+                  handler: NotificationHandler) {
+        self.center = center
+        observerProxy = center.addObserverForName(notification.name, object: notification.sender, queue: queue, usingBlock: handler)
     }
 
     /// :nodoc:
