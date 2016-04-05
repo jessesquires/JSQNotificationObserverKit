@@ -6,7 +6,7 @@
 
 git submodule update --remote
 
-jazzy --swift-version 2.1.1 -o ./ \
+jazzy --swift-version 2.2 -o ./ \
       --source-directory JSQNotificationObserverKit/ \
       --readme JSQNotificationObserverKit/README.md \
       -a 'Jesse Squires' \
