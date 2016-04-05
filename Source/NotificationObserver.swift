@@ -18,26 +18,19 @@
 
 import Foundation
 
-/// Describes a notification's userInfo dictionary
+
+/// Describes a notification's userInfo dictionary.
 public typealias UserInfo = [NSObject : AnyObject]
 
-/// A notification that doesn't care about its sender or user info
-public typealias BroadcastNotification = Notification<Any?, AnyObject>
-
-/// A notification observer that doesn't care about its sender or user info
-public typealias BroadcastObserver = NotificationObserver<Any?, AnyObject>
-
-/// The type to use for blocks which don't care about their sender or user info
-public typealias BroadcastHandler = BroadcastObserver.ValueSenderHandler
-
-/// A notification for a Cocoa provided notification
+/// Describes a Cocoa notification.
 public typealias CocoaNotification = Notification<Any, AnyObject>
 
-/// A notification observer for a Cocoa provided notification
+/// Describes a Cocoa observer.
 public typealias CocoaObserver = NotificationObserver<Any, AnyObject>
 
-/// The type to use for blocks which receive a Cocoa notification
+/// Describes a closure for Cocoa notifications.
 public typealias CocoaHandler = CocoaObserver.NotificationHandler
+
 
 /**
  - parameter lhs: A UserInfo instance.
