@@ -29,7 +29,7 @@ public typealias CocoaNotification = Notification<Any, AnyObject>
 public typealias CocoaObserver = NotificationObserver<Any, AnyObject>
 
 /// Describes a closure for Cocoa notifications.
-public typealias CocoaHandler = CocoaObserver.NotificationHandler
+public typealias CocoaClosure = CocoaObserver.NotificationClosure
 
 
 /**
@@ -128,14 +128,14 @@ public final class NotificationObserver <V, S: AnyObject> {
      - parameter value:  The data sent with the notification.
      - parameter sender: The object that sent the notification, or `nil` if the notification is not associated with a specific sender.
      */
-    public typealias ValueSenderHandler = (value: V, sender: S?) -> Void
+    public typealias ValueSenderClosure = (value: V, sender: S?) -> Void
 
     /**
      The closure to be called when an `NSNotification` is received.
 
      - parameter notification: The notification received.
      */
-    public typealias NotificationHandler = (notification: NSNotification) -> Void
+    public typealias NotificationClosure = (notification: NSNotification) -> Void
 
 
     // MARK: Properties
@@ -161,7 +161,7 @@ public final class NotificationObserver <V, S: AnyObject> {
     public convenience init(_ notification: Notification<V, S>,
                               queue: NSOperationQueue? = nil,
                               center: NSNotificationCenter = .defaultCenter(),
-                              handler: ValueSenderHandler) {
+                              handler: ValueSenderClosure) {
         self.init(notification, queue: queue, center: center, handler: { (notification: NSNotification) in
             if let value: V = unboxUserInfo(notification.userInfo) {
                 handler(value: value, sender: notification.object as? S)
@@ -184,7 +184,7 @@ public final class NotificationObserver <V, S: AnyObject> {
     public init(_ notification: Notification<V, S>,
                   queue: NSOperationQueue? = nil,
                   center: NSNotificationCenter = .defaultCenter(),
-                  handler: NotificationHandler) {
+                  handler: NotificationClosure) {
         self.center = center
         observerProxy = center.addObserverForName(notification.name, object: notification.sender, queue: queue, usingBlock: handler)
     }
