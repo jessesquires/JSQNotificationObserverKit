@@ -115,8 +115,8 @@ public struct Notification <Value, Sender: AnyObject> {
 /**
  An instance of `NotificationObserver` is responsible for observing notifications.
 
- - note: When an observer is initialized, it will immediately begin listening for its specified notification
- by registering with the specified notification center.
+ - warning: When an observer is initialized, it will immediately begin listening for its specified notification
+ by registering with the specified notification center. To stop listening, dealloc the observer by setting it to `nil`.
  */
 public final class NotificationObserver <V, S: AnyObject> {
 
