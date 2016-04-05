@@ -56,7 +56,7 @@
             <a href="../Typealiases.html">Typealiases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:26JSQNotificationObserverKit12CocoaHandler">CocoaHandler</a>
+                <a href="../Typealiases.html#/s:26JSQNotificationObserverKit12CocoaClosure">CocoaClosure</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:26JSQNotificationObserverKit17CocoaNotification">CocoaNotification</a>
@@ -104,9 +104,9 @@ by registering with the specified notification center.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver19NotificationHandler"></a>
-                    <a name="//apple_ref/swift/Alias/NotificationHandler" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C26JSQNotificationObserverKit20NotificationObserver19NotificationHandler">NotificationHandler</a>
+                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver19NotificationClosure"></a>
+                    <a name="//apple_ref/swift/Alias/NotificationClosure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C26JSQNotificationObserverKit20NotificationObserver19NotificationClosure">NotificationClosure</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -121,7 +121,7 @@ by registering with the specified notification center.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">NotificationHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">NotificationClosure</span> <span class="o">=</span> <span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
@@ -151,9 +151,9 @@ by registering with the specified notification center.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver18ValueSenderHandler"></a>
-                    <a name="//apple_ref/swift/Alias/ValueSenderHandler" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C26JSQNotificationObserverKit20NotificationObserver18ValueSenderHandler">ValueSenderHandler</a>
+                    <a name="/s:C26JSQNotificationObserverKit20NotificationObserver18ValueSenderClosure"></a>
+                    <a name="//apple_ref/swift/Alias/ValueSenderClosure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C26JSQNotificationObserverKit20NotificationObserver18ValueSenderClosure">ValueSenderClosure</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -168,7 +168,7 @@ by registering with the specified notification center.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ValueSenderHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">V</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">S</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ValueSenderClosure</span> <span class="o">=</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">V</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">S</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
@@ -248,7 +248,7 @@ by registering with the specified notification center.
                           <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">,</span> <span class="kt">S</span><span class="o">&gt;</span><span class="p">,</span>
                               <span class="nv">queue</span><span class="p">:</span> <span class="kt">NSOperationQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                               <span class="nv">center</span><span class="p">:</span> <span class="kt">NSNotificationCenter</span> <span class="o">=</span> <span class="o">.</span><span class="nf">defaultCenter</span><span class="p">(),</span>
-                              <span class="nv">handler</span><span class="p">:</span> <span class="kt">ValueSenderHandler</span><span class="p">)</span></code></pre>
+                              <span class="nv">handler</span><span class="p">:</span> <span class="kt">ValueSenderClosure</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -348,7 +348,7 @@ by registering with the specified notification center.
                           <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">,</span> <span class="kt">S</span><span class="o">&gt;</span><span class="p">,</span>
                   <span class="nv">queue</span><span class="p">:</span> <span class="kt">NSOperationQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                   <span class="nv">center</span><span class="p">:</span> <span class="kt">NSNotificationCenter</span> <span class="o">=</span> <span class="o">.</span><span class="nf">defaultCenter</span><span class="p">(),</span>
-                  <span class="nv">handler</span><span class="p">:</span> <span class="kt">NotificationHandler</span><span class="p">)</span></code></pre>
+                  <span class="nv">handler</span><span class="p">:</span> <span class="kt">NotificationClosure</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
