@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
    s.name = 'JSQNotificationObserverKit'
-   s.version = '4.0.0'
+   s.version = '5.0.0'
    s.license = 'MIT'
 
    s.summary = 'Generic notifications and observers for Cocoa and CocoaTouch'
    s.homepage = 'https://github.com/jessesquires/JSQNotificationObserverKit'
-   s.documentation_url = 'http://jessesquires.com/JSQNotificationObserverKit'
+   s.documentation_url = 'http://jessesquires.com/JSQNotificationObserverKit/'
    s.social_media_url = 'https://twitter.com/jesse_squires'
-   s.authors = { 'Jesse Squires' => 'jesse.squires.developer@gmail.com' }
+   s.author = 'Jesse Squires'
 
    s.source = { :git => 'https://github.com/jessesquires/JSQNotificationObserverKit.git', :tag => s.version }
    s.source_files = 'Source/*.swift'
