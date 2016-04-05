@@ -95,10 +95,10 @@
                       <div class="abstract">
                         <p>An instance of <code>NotificationObserver</code> is responsible for observing notifications.</p>
 
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
     When an observer is initialized, it will immediately begin listening for its specified notification
-by registering with the specified notification center.
+by registering with the specified notification center. To stop listening, dealloc the observer by setting it to <code>nil</code>.
 
 </div>
 
