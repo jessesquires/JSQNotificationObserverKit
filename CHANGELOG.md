@@ -4,6 +4,33 @@ The changelog for `JSQNotificationObserverKit`. Also see the [releases](https://
 
 --------------------------------------
 
+5.0.0
+-----
+
+This release closes the [5.0.0 milestone](https://github.com/jessesquires/JSQNotificationObserverKit/issues?utf8=✓&q=milestone%3A5.0.0+).
+
+### Breaking changes :warning: 
+
+- Updated to Swift 2.2 (#35). **Swift 2.2 and above is now required.**
+- The `notification:` parameter name has been removed from `NotificationObserver` initializers to reduce verbosity (#31). Example:
+
+````swift
+// OLD
+let observer = NotificationObserver(notification: note) { (value, sender) in
+}
+
+// NEW
+let observer = NotificationObserver(note) { (value, sender) in
+}
+````
+
+- Renamed `ValueSenderHandler` to `ValueSenderClosure`
+- Renamed `NotificationHandler` to `NotificationClosure`
+
+### New 
+
+- New convenience typealiases for Cocoa notifications: `CocoaNotification`, `CocoaObserver`, `CocoaClosure` (#28, #33). Thanks @grosch ! See the [docs](http://www.jessesquires.com/JSQNotificationObserverKit/) for details.
+
 4.0.0
 -----
 
