@@ -62,7 +62,7 @@ let notification = Notification<CGSize, UIView>(name: "NewViewSizeNotif", sender
 var observer: NotificationObserver<CGSize, UIView>?
 
 // Register observer, start listening for the notification
-observer = NotificationObserver(notification: notification) { (value, sender) in
+observer = NotificationObserver(notification) { (value, sender) in
     // handle notification
     // the value and sender are both passed here
 }
@@ -87,7 +87,7 @@ notification.post("new string")
 
 // Register observer, this handles notifications from *any* sender
 var observer: NotificationObserver<String, AnyObject>?
-observer = NotificationObserver(notification: notification) { (value, sender) in
+observer = NotificationObserver(notification) { (value, sender) in
     // handle notification
     // the value is passed here, sender is nil
 }
@@ -107,7 +107,7 @@ let c = NSNotificationCenter.defaultCenter()
 
 let q = NSOperationQueue.mainQueue()
 
-let observer = NotificationObserver(notification: n, queue: q, center: c) { (value, sender) in
+let observer = NotificationObserver(n, queue: q, center: c) { (value, sender) in
     // handle notification
 }
 
@@ -121,7 +121,7 @@ Not all notifications are associated with a specific value. Sometimes notificati
 ````swift
 let notification = Notification<Any?, AnyObject>(name: "MyEventNotification")
 
-let observer = NotificationObserver(notification: notification) { (value, sender) in
+let observer = NotificationObserver(notification) { (value, sender) in
     // handle notification
     // value is nil, sender is nil
 }
@@ -137,7 +137,7 @@ The library can also handle "traditional" notifications that are posted by the O
 ````swift
 let notification = CocoaNotification(name: UIApplicationDidReceiveMemoryWarningNotification)
 
-let observer = CocoaObserver(notification: notification, handler: { (notification: NSNotification) in
+let observer = CocoaObserver(notification, handler: { (notification: NSNotification) in
     // handle the notification
 })
 
