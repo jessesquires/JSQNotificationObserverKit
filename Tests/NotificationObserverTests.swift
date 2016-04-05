@@ -78,7 +78,7 @@ final class NotificationObserverTests: XCTestCase {
 
         let sender = TestSender()
         let value = 666
-        let expect = self.expectationWithDescription("\(__FUNCTION__)")
+        let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notif, handler: { (v, s) in
@@ -106,7 +106,7 @@ final class NotificationObserverTests: XCTestCase {
         // GIVEN: a notification
         let notif = Notification<Void, AnyObject>(name: "Notification")
 
-        let expect = self.expectationWithDescription("\(__FUNCTION__)")
+        let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notif, handler: { (value, sender) in
@@ -132,7 +132,7 @@ final class NotificationObserverTests: XCTestCase {
         // GIVEN: a notification
         let notif = Notification<UserInfo, NotificationObserverTests>(name: "ExampleNotification", sender: self)
 
-        let expect = self.expectationWithDescription("\(__FUNCTION__)")
+        let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notif, handler: { [weak self] (value, sender) in
@@ -159,7 +159,7 @@ final class NotificationObserverTests: XCTestCase {
         // GIVEN: a notification without a sender
         let notif = Notification<[String: NSObject], AnyObject>(name: "ExampleNotification")
 
-        let expect = self.expectationWithDescription("\(__FUNCTION__)")
+        let expect = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notif, queue: .mainQueue(), center: .defaultCenter(), handler: { (value, sender) in
@@ -185,7 +185,7 @@ final class NotificationObserverTests: XCTestCase {
         let fakeValue = TestValue()
         let notification = Notification<TestValue, TestSender>(name: "NotificationName", sender: fakeSender)
 
-        let expectation = self.expectationWithDescription("\(__FUNCTION__)")
+        let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
@@ -210,7 +210,7 @@ final class NotificationObserverTests: XCTestCase {
         let fakeValue = TestValue()
         let notification = Notification<TestValue, AnyObject>(name: "NotificationName")
 
-        let expectation = self.expectationWithDescription("\(__FUNCTION__)")
+        let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
@@ -234,7 +234,7 @@ final class NotificationObserverTests: XCTestCase {
         // GIVEN: a notification with a sender
         let notification = Notification<Any?, AnyObject>(name: "NotificationName")
 
-        let expectation = self.expectationWithDescription("\(__FUNCTION__)")
+        let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an observer
         let observer = NotificationObserver(notification: notification, handler: { (value, sender) in
@@ -256,12 +256,12 @@ final class NotificationObserverTests: XCTestCase {
 
     func test_ThatNotificationIsPostedAndReceived_TraditionalCocoa() {
         // GIVEN: a "traditional Cocoa" notification
-        let notification = Notification<Any, AnyObject>(name: UIApplicationDidReceiveMemoryWarningNotification)
-
-        let expectation = self.expectationWithDescription("\(__FUNCTION__)")
+        let notification = CocoaNotification(name: UIApplicationDidReceiveMemoryWarningNotification)
+        
+        let expectation = self.expectationWithDescription("\(#function)")
 
         // GIVEN: an "traditional Cocoa" observer
-        let observer = NotificationObserver(notification: notification, handler: { (notification: NSNotification) in
+        let observer = CocoaObserver(notification: notification, handler: { (notification: NSNotification) in
             expectation.fulfill()
         })
 
