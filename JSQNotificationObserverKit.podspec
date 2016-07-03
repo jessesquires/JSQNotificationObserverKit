@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'JSQNotificationObserverKit'
-   s.version = '5.0.0'
+   s.version = '5.0.1'
    s.license = 'MIT'
 
    s.summary = 'Generic notifications and observers for Cocoa and CocoaTouch'
@@ -18,4 +18,5 @@ Pod::Spec.new do |s|
    s.watchos.deployment_target = '2.0'
 
    s.requires_arc = true
+   s.deprecated = true
 end
