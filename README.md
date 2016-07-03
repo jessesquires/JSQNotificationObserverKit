@@ -1,4 +1,10 @@
-# JSQNotificationObserverKit
+# :warning: Deprecated :warning:
+
+As Swift 3 and proposal [SE-0069](https://github.com/apple/swift-evolution/blob/master/proposals/0069-swift-mutability-for-foundation.md), this library is no longer necessary. 
+
+Foundation now provides a `Notification` struct. Unfortunately, it is not generic like the value type provided by this library, `Notification<T, U>`, but dealing with the trouble/confusion between the namespaces (`Foundation.Notification` vs. `JSQNotificationObserverKit.Notification`) makes this library not worth it.
+
+## JSQNotificationObserverKit
 
 [![Build Status](https://secure.travis-ci.org/jessesquires/JSQNotificationObserverKit.svg)](http://travis-ci.org/jessesquires/JSQNotificationObserverKit) [![Version Status](https://img.shields.io/cocoapods/v/JSQNotificationObserverKit.svg)][podLink] [![license MIT](https://img.shields.io/cocoapods/l/JSQNotificationObserverKit.svg)][mitLink] [![codecov](https://codecov.io/gh/jessesquires/JSQNotificationObserverKit/branch/develop/graph/badge.svg)](https://codecov.io/gh/jessesquires/JSQNotificationObserverKit) [![Platform](https://img.shields.io/cocoapods/p/JSQNotificationObserverKit.svg)][docsLink] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -15,7 +21,7 @@ This library aims to provide better semantics regarding notifications and moves 
 * OSX 10.10+
 * tvOS 9.1+
 * watchOS 2.0+
-* Swift 2.2+
+* **Swift 2.2**
 
 ## Installation
 
