@@ -1,6 +1,6 @@
 # :warning: Deprecated :warning:
 
-As Swift 3 and proposal [SE-0069](https://github.com/apple/swift-evolution/blob/master/proposals/0069-swift-mutability-for-foundation.md), this library is no longer necessary. 
+As Swift 3.0 and proposal [SE-0069](https://github.com/apple/swift-evolution/blob/master/proposals/0069-swift-mutability-for-foundation.md), this library is no longer necessary. 
 
 Foundation now provides a `Notification` struct. Unfortunately, it is not generic like the value type provided by this library, `Notification<T, U>`, but dealing with the trouble/confusion between the namespaces (`Foundation.Notification` vs. `JSQNotificationObserverKit.Notification`) makes this library not worth it.
 
